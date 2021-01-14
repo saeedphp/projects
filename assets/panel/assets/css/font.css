@@ -1,0 +1,206 @@
+@font-face {
+    font-family: "diroz";
+    src: url("../fonts/Dirooz-FD.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/Dirooz-FD.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Dirooz-FD.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/Dirooz-FD.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/Dirooz-FD.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/Dirooz-FD.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/Dirooz-FD.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Aviny;
+    src: url('../fonts/eot/AvPink.eot');
+    src: url('../fonts/eot/AvPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/AvPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/AvPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/AvPink.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Sarbaz;
+    src: url('../fonts/eot/SarPink.eot');
+    src: url('../fonts/eot/SarPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/SarPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/SarPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/SarPink.ttf') format('truetype');
+}
+@font-face {
+    font-family: Dana;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/DanPink.eot');
+    src: url('../fonts/eot/DanPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/DanPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/DanPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/DanPink.ttf') format('truetype');
+}
+@font-face {
+    font-family: Dana-Bold;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/eot/DanPink-Bold.eot');
+    src: url('../fonts/eot/DanPink-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/DanPink-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/DanPink-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/DanPink-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: Behdad;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/eot/BehPink.eot');
+    src: url('../fonts/eot/BehPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/BehPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/BehPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/BehPink.ttf') format('truetype');
+}
+@font-face {
+    font-family: Lalezar;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/Lalezar.eot');
+    src: url('../fonts/eot/Lalezar.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Lalezar.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Lalezar.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Lalezar.ttf') format('truetype');
+}
+@font-face {
+    font-family: Mahboubeh;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/eot/MahboubehPink.eot');
+    src: url('../fonts/eot/MahboubehPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/MahboubehPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/MahboubehPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/MahboubehPink.ttf') format('truetype');
+}
+@font-face {
+    font-family: Negaar;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/Negaar.eot');
+    src: url('../fonts/eot/Negaar.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Negaar.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Negaar.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Negaar.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Negaar-Bold;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/Negaar-Bold.eot');
+    src: url('../fonts/eot/Negaar-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Negaar-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Negaar-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Negaar-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: IranYekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/Pink.eot');
+    src: url('../fonts/eot/Pink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Pink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Pink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Pink.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IranSans-DastNevis;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/PinkSansDN.eot');
+    src: url('../fonts/eot/PinkSansDN.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/PinkSansDN.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/PinkSansDN.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/PinkSansDN.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Yekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/PinkYekan.eot');
+    src: url('../fonts/eot/PinkYekan.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/PinkYekan.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/PinkYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/PinkYekan.ttf') format('truetype');
+}
+@font-face {
+    font-family: Yekan-Bold;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/PinkYekan-Bold.eot');
+    src: url('../fonts/eot/PinkYekan-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/PinkYekan-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/PinkYekan-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/PinkYekan-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Sahel;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/Sahel.eot');
+    src: url('../fonts/eot/Sahel.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Sahel.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Sahel.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Sahel.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Sahel-Bold;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/Sahel-Bold.eot');
+    src: url('../fonts/eot/Sahel-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/Sahel-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/Sahel-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/Sahel-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: Anjoman;
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/eot/AnjPink.eot');
+    src: url('../fonts/eot/AnjPink.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/AnjPink.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/AnjPink.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/AnjPink.ttf') format('truetype');
+}
+@font-face {
+    font-family: Anjoman-Bold;
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/eot/AnjPink-Bold.eot');
+    src: url('../fonts/eot/AnjPink-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff2/AnjPink-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/AnjPink-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/AnjPink-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'IRANSans';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/eot/PinkSans.eot');
+    src: url('../fonts/eot/PinkSans.eot?#iefix') format('embedded-opentype'),
+        /* IE6-8 */
+    url('../fonts/woff2/PinkSans.woff2') format('woff2'),
+        /* FF39+,Chrome36+, Opera24+*/
+    url('../fonts/woff/PinkSans.woff') format('woff'),
+        /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/PinkSans.ttf') format('truetype');
+}
+
+.fa{
+    font: normal normal normal 14px/1 FontAwesome !important;
+}
+.far {
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 400;
+}
