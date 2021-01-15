@@ -601,10 +601,7 @@ foreach ($redirect as $row){ ?>
                     </a>
                     <ul class="collapse submenu list-unstyled <?php if ($active=='stage' || $active=='archive-stage'){echo 'show';} ?>" id="stage" data-parent="#accordionExample">
                         <li class="<?php if ($active=='project'){echo 'active';} ?>">
-                            <a href="adminproject"> مراحل </a>
-                        </li>
-                        <li class="<?php if ($active=='archive-stage'){echo 'active';} ?>">
-                            <a href="adminproject/archive"> بایگانی </a>
+                            <a href="adminstage"> مراحل </a>
                         </li>
                     </ul>
                 </li>
