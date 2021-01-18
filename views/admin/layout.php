@@ -345,6 +345,27 @@ foreach ($redirect as $row){ ?>
                     </ul>
                 </li>
 
+                <li class="menu">
+                    <a href="#profile" <?php if ($active=='profile' ){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-user"></i>
+                            <span>پروفایل من</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='profile'){echo 'show';} ?>" id="profile" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='profile'){echo 'active';} ?>">
+                            <a href="adminprofile"> پروفایل </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <?php
                 if ($level==1 || $level==6 || $level==5){ ?>
                     <li class="menu">

@@ -46,6 +46,7 @@ $userLevel = $data['userLevel'];
                                 <option value="4">تغییر به گرافیست</option>
                                 <option value="5">تغییر به بیننده</option>
                                 <option value="6">تغییر به حسابدار</option>
+                                <option value="8">تغییر به مشتری</option>
                                 <option value="7">حذف</option>
                             </select>
 
