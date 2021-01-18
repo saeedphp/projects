@@ -48,6 +48,9 @@ class model_form extends Model
         $userFacilities = $data['userfacilities'];
         $shopFacilities = $data['shopfacilities'];
 
+        self::sessionInit();
+        $userId=self::sessionGet('userId');
+
         if (isset($data['date'])) {
             $date = $data['date'];
             $date = date('Y/m/d');
@@ -93,8 +96,8 @@ class model_form extends Model
             move_uploaded_file($pdfTmp, $fileTarget);
 
             if (!empty($name)) {
-                $sql = 'INSERT INTO tbl_form (name,address,tel,islogo,logo,maincolor,accentcolor,isguideline,guideline,pros,sitecontent,sitedesign,rival,mainnotes,social,shop,product,specialproduct,photo,introduction,userfacilities,shopfacilities,date,time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-                $params = [$name, $address, $tel, $isLogo, $target, $mainColor, $accentColor, $isGuideline, $fileTarget, $pros, $siteContent, $siteDesign, $rival, $notes, $social, $shop, $product, $specialProduct, $photo, $introduction, $userFacilities, $shopFacilities, $date_jalali, $time];
+                $sql = 'INSERT INTO tbl_form (name,address,tel,islogo,logo,maincolor,accentcolor,isguideline,guideline,pros,sitecontent,sitedesign,rival,mainnotes,social,shop,product,specialproduct,photo,introduction,userfacilities,shopfacilities,user,date,time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+                $params = [$name, $address, $tel, $isLogo, $target, $mainColor, $accentColor, $isGuideline, $fileTarget, $pros, $siteContent, $siteDesign, $rival, $notes, $social, $shop, $product, $specialProduct, $photo, $introduction, $userFacilities, $shopFacilities, $userId, $date_jalali, $time];
                 $this->doQuery($sql, $params);
             } else {
                 $error = 'لطفا نام مجموعه خود را وارد کنید!';
