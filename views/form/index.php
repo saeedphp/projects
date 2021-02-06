@@ -375,9 +375,6 @@ $social = $data['social'];
 
 </div>
 
-
-<a id="back-to-top" href="#" class="show"><i class="flaticon-arrow-pointing-to-up"></i></a>
-
 <script>
     $(".chosen-select").chosen({
         no_results_text: "نتیجه ای یافت نشد!"

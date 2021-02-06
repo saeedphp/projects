@@ -134,6 +134,14 @@ class Model{
 
     }
 
+    public static function link(){
+
+        $sql='SELECT * FROM tbl_link';
+        $res=self::doSelect($sql,);
+        return $res;
+
+    }
+
     public static function logOut(){
 
         self::sessionInit();
@@ -160,6 +168,28 @@ class Model{
         $sql='SELECT * FROM tbl_user WHERE id=?';
         $userInfo=self::doSelect($sql,[$userId],1);
         return $userInfo['name'];
+
+    }
+
+    public static function getUserDate(){
+
+        self::sessionInit();
+        $userId=self::sessionGet('userId');
+
+        $sql='SELECT * FROM tbl_user WHERE id=?';
+        $userInfo=self::doSelect($sql,[$userId],1);
+        return $userInfo['date'];
+
+    }
+
+    public static function getUserMobile(){
+
+        self::sessionInit();
+        $userId=self::sessionGet('userId');
+
+        $sql='SELECT * FROM tbl_user WHERE id=?';
+        $userInfo=self::doSelect($sql,[$userId],1);
+        return $userInfo['mobile'];
 
     }
 

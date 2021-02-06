@@ -10,12 +10,12 @@
     <section class="p-t110 z-index-1 section-contact bg-white particles-js" data-color="#fe4c1c,#00c3ff,#0160e7"
              data-id="a1">
         <div class="container">
-            <div class="row flex-row">
+            <div class="row flex-row register-row">
 
-                <div class="col-md-2 col-xs-12 align-self-center"></div>
+                <div class="col-md-3 col-xs-12 align-self-center"></div>
 
-                <div class="col-md-8 col-xs-12 align-self-center">
-                    <div class="form-contact">
+                <div class="col-md-6 col-xs-12 align-self-center">
+                    <div class="form-contact form-register">
 
                         <?php
 
@@ -64,12 +64,13 @@
                                 </span>
                             </p>
 
-                            <p>
+                            <p class="show-pass" style="position: relative;">
                                 <label>
                                     رمز عبور
                                 </label>
                                 <span class="wpcf7-form-control-wrap your-name">
-                                    <input type="password" name="password" id="name" class="wpcf7-form-control wpcf7-text" required>
+                                    <i onclick="showpass2(this)" class="fa fa-eye"></i>
+                                    <input type="password" name="password" id="password2" class="wpcf7-form-control wpcf7-text" required>
                                 </span>
                             </p>
 
@@ -89,21 +90,48 @@
                                     ارسال <i class="flaticon-right-arrow-1"></i></button>
                             </p>
 
+                            <p>
+                                <a href="login">
+                                    قبلا ثبت نام کرده اید، وارد شوید
+                                </a>
+                            </p>
+
                         </form>
 
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-2 col-xs-12 align-self-center"></div>
+            <div class="col-md-3 col-xs-12 align-self-center"></div>
 
         </div>
     </section>
 
 </div>
 
+<script>
 
-<a id="back-to-top" href="#" class="show"><i class="flaticon-arrow-pointing-to-up"></i></a>
+    function showpass2(tag) {
+
+        var imgTag = $(tag);
+        var eye = imgTag.attr('class');
+        if (eye == 'fa fa-eye') {
+            imgTag.attr('class', 'fa fa-eye-slash');
+        } else {
+            imgTag.attr('class', 'fa fa-eye');
+        }
+
+        var x =
+            document.getElementById("password2");
+        if (x.type === 'password') {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+
+    }
+
+</script>
 
 
 

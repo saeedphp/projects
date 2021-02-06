@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/royal-preload.css"/>
     <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css"/>
     <link rel="stylesheet" href="assets/vendor/dropify/css/dropify.min.css"/>
+    <link rel="stylesheet" href="assets/css/lightgallery.css"/>
+    <link rel="stylesheet" href="assets/gallery/css/vendor/font-awesome.min.css">
 
 
     <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
@@ -37,7 +39,7 @@ $level=Model::getUserLevel();
 $name=Model::getUserName();
 ?>
 
-<body class="">
+<body style="background: #fff;" class="">
 
 <div id="page" class="site">
     <header id="site-header" class="site-header header-style-2 sticky-header header-fullwidth">
@@ -60,6 +62,26 @@ $name=Model::getUserName();
                                     <ul id="primary-menu" class="menu" style="display: flex;">
                                         <?php
                                         if ($userId==false){ ?>
+                                            <li>
+                                                <a href="">
+                                                    صفحه اصلی
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="form">
+                                                    فرم نیازسنجی
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="estimate">
+                                                    براورد هزینه
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    تیم ما
+                                                </a>
+                                            </li>
                                         <li>
                                             <a href="register">
                                                 ثبت نام
@@ -73,6 +95,26 @@ $name=Model::getUserName();
                                         <?php }else{ ?>
                                             <li>
                                                 <a href="">
+                                                    صفحه اصلی
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="form">
+                                                    فرم نیازسنجی
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="estimate">
+                                                    براورد هزینه
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    تیم ما
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
                                                     کاریر عزیز،
                                                     <?= $name; ?>
                                                     خوش آمدین
@@ -125,19 +167,7 @@ $name=Model::getUserName();
                     </div>
                     <div class="octf-btn-cta">
                         <div class="octf-header-module cart-btn-hover">
-                            <div class="h-cart-btn octf-cta-icons">
-                                <a class="cart-contents" href="cart.html" title="View your shopping cart">
-                                    <i class="flaticon-supermarket"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </div>
-                            <div class="site-header-cart">
-                                <div class="widget woocommerce widget_shopping_cart">
-                                    <div class="widget_shopping_cart_content">
-                                        <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div id="mmenu_toggle">
@@ -148,34 +178,74 @@ $name=Model::getUserName();
                     <div class="mobile_nav">
                         <ul style="display: flex;flex-direction: column;" id="menu-main-menu" class="mobile_mainmenu">
                             <?php
-                            foreach ($menu as $level1) { ?>
-                                <li style="order: <?= $level1['menuOrder']; ?>"
-                                    class="menu-item-has-children current-menu-item current-menu-ancestor">
-                                    <a href="<?= $level1['link']; ?>">
-                                        <?= $level1['title']; ?>
+                            if ($userId==false){ ?>
+                                <li>
+                                    <a href="">
+                                        صفحه اصلی
                                     </a>
-                                    <?php if (isset($level1['children'])) { ?>
-
-                                        <ul class="sub-menu">
-                                            <?php
-                                            if (isset($level1['children'])) {
-                                                $children = $level1['children'];
-                                            } else {
-                                                $children = [];
-                                            }
-
-                                            foreach ($children as $level2) { ?>
-                                                <li>
-                                                    <a href="<?= $level2['link']; ?>">
-                                                        <?= $level2['title']; ?>
-                                                    </a>
-                                                </li>
-
-
-                                            <?php } ?>
-                                        </ul>
-
-                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <a href="form">
+                                        فرم نیازسنجی
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        براورد هزینه
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        تیم ما
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="register">
+                                        ثبت نام
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="login">
+                                        ورود
+                                    </a>
+                                </li>
+                            <?php }else{ ?>
+                                <li>
+                                    <a href="">
+                                        صفحه اصلی
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form">
+                                        فرم نیازسنجی
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        براورد هزینه
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        تیم ما
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        کاریر عزیز،
+                                        <?= $name; ?>
+                                        خوش آمدین
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile">
+                                        پروفایل
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= URL ?>admindashboard/logout">
+                                        خروج
+                                    </a>
                                 </li>
                             <?php } ?>
                         </ul>

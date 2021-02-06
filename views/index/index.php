@@ -1,98 +1,222 @@
 <div id="content" class="site-content">
 
-    <section class="section-content-marketing p-t110 p-b340 bg-light particles-js" data-color="#fe4c1c,#00c3ff,#0160e7"
-             data-id="a1">
+    <section class="home4-service">
+    <section class="home4-about">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-xs-12 text-center">
+            <div class="flex-row">
 
-                    <div class="ot-heading main-title">
-                        <h3><a href="<?= URL ?>adminlogin">ورود به پنل مدیریت پروژه های فراموج</a></h3>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="home4-about-right">
+                        <img src="assets/images/image1-home4.png" alt>
                     </div>
+                </div>
 
-                    <div class="ot-cprocess">
-                        <div class="ot-cprocess-item clearfix repeater-item-1 text-right">
-                            <div class="ot-cprocess-item-number font-second">01</div>
-                            <div class="ot-cprocess-item-inner">
-                                <div class="ot-cprocess-item-dot"></div>
-                                <div class="ot-cprocess-item-title font-second">
-                                    <a style="#00c3ff">
-                                        مدیریت پروژه ها </a>
-                                </div>
-
-                            </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 align-self-center">
+                    <div class="home4-about-left">
+                        <div class="ot-heading left-align">
+                            <h6><span>درباره ما</span></h6>
+                            <h2 class="main-heading">از خدمات کامل دیجیتال لذت ببرید تخصص بازاریابی
+                            </h2>
                         </div>
-                        <div class="ot-cprocess-item clearfix repeater-item-2 text-center">
-                            <div class="ot-cprocess-item-number font-second">02</div>
-                            <div class="ot-cprocess-item-inner">
-                                <div class="ot-cprocess-item-dot"></div>
-                                <div class="ot-cprocess-item-title font-second">
-                                    <a style="#00c3ff">
-                                        مشاهده روند پیشرفت پروژه ها </a>
-                                </div>
+                        <p class="font22 text-dark">رویکرد ما به سئو به طور منحصر به فردی بر اساس آنچه می دانیم کار می
+                            کند … و آنچه می دانیم کار نمی کند ساخته شده است.
 
-                            </div>
-                        </div>
-                        <div class="ot-cprocess-item clearfix repeater-item-3 text-left">
-                            <div class="ot-cprocess-item-number font-second">03</div>
-                            <div class="ot-cprocess-item-inner">
-                                <div class="ot-cprocess-item-dot"></div>
-                                <div class="ot-cprocess-item-title font-second">
-                                    <a style="#00c3ff">
-                                        مدیریت تاریخ تحویل پروژه ها </a>
-                                </div>
+                        </p>
+                        <p class="m-b18">در طول سال ها ، ما با Fortune 500s و استارتاپ های کاملاً جدید کار کرده ایم. ما
+                            با ایجاد آگاهی ، ایجاد ترافیک وب ، ارتباط با مشتری و رشد کلی فروش ، به مشاغل جاه طلبانه
+                            مانند شما کمک می کنیم سود بیشتری کسب کنند.
 
-                            </div>
-                        </div>
-                        <div class="circle_logo">
-                            <a href="<?= URL; ?>">
-                                <img src="assets/images/optimized-nxo9.png" alt="">
+                        </p>
+                        <div class="home4-about-left-btn">
+                            <a href="#">
+                                <img src="assets/images/gg-rating.png" alt="">
                             </a>
                         </div>
-                        <svg class="ot-cprocess-circle-chart" height="500" width="500">
-                            <circle cx="250" cy="250" r="225" stroke="url(#gradient)" stroke-width="50"
-                                    fill="none"></circle>
-                            <linearGradient id="gradient" gradientTransform="rotate(45)">
-                                <stop offset="0%" stop-color="#015be6"></stop>
-                                <stop offset="100%" stop-color="#03baee"></stop>
-                            </linearGradient>
-                        </svg>
                     </div>
-                    <div class="services-content-marketing">
-                        <div class="process-box">
-                            <div class="number-box">01</div>
-                            <div class="icon-main"></div>
-                            <div class="content-box">
-                                <h5>
-                                    <a style="#00c3ff">
-                                        مدیریت پروژه ها </a>
-                                </h5>
-                            </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="ot-heading text-center">
+                        <h6><span>خدمات ما
+</span></h6>
+                        <h2 class="main-heading">بهترین را معرفی کنید <br> خدمات جستجوگرها برای تجارت</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row justify-content-center">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-box s3">
+                        <div class="bg-s3"></div>
+                        <div class="bg-before"></div>
+                        <div class="bg-after"></div>
+                        <div class="icon-main">
+                            <img src="assets/images/service/1/service.png" alt="All Sizes Business">
                         </div>
-                        <div class="process-box">
-                            <div class="number-box">02</div>
-                            <div class="icon-main"></div>
-                            <div class="content-box">
-                                <h5>
-                                    <a style="#00c3ff">
-                                        مشاهده روند پیشرفت پروژه ها </a>
-                                </h5>
-                            </div>
+                        <div class="content-box">
+                            <h5>تمام اندازه های تجاری</h5>
+                            <p>می توانید پاسخی را که مشتریان بالقوه شما در جستجوی آن هستند ارائه دهید ، بنابراین می
+                                توانید به صنعت تبدیل شوید.</p>
                         </div>
-                        <div class="process-box">
-                            <div class="number-box">03</div>
-                            <div class="icon-main"></div>
-                            <div class="content-box">
-                                <h5>
-                                    <a style="#00c3ff">
-                                        مدیریت تاریخ تحویل پروژه ها </a>
-                                </h5>
-                            </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-box s3">
+                        <div class="bg-s3"></div>
+                        <div class="bg-before"></div>
+                        <div class="bg-after"></div>
+                        <div class="icon-main">
+                            <img src="assets/images/service/2/service.png" alt="All Sizes Business">
+                        </div>
+                        <div class="content-box">
+                            <h5>نتایج عالی</h5>
+                            <p>کمپین های اجتماعی با عملکرد بالا را ایجاد و مدیریت کنید و توسعه یک طرفدار اختصاصی مشتری
+                                را شروع کنید.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-box s3">
+                        <div class="bg-s3"></div>
+                        <div class="bg-before"></div>
+                        <div class="bg-after"></div>
+                        <div class="icon-main">
+                            <img src="assets/images/service/3/service.png" alt="All Sizes Business">
+                        </div>
+                        <div class="content-box">
+                            <h5>سئو  قابل توجه</h5>
+                            <p>با خدمات قدرتمند سئو ، بازدید وب سایت ، مشتری بیشتر و دید آنلاین بیشتری داشته باشید.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="p-t100 p-b120 bg-process">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ot-heading text-center m-b80">
+                        <h6><span>چطور شروع کنید</span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row justify-content-center">
+                <div class="col-md-4 col-sm-6 col-xs-12 text-center sm-m-b40">
+                    <div class="process-box">
+                        <img class="p-arrow" src="assets/images/p-arrow1.png" alt="arrow">
+                        <div class="number-box">01</div>
+                        <div class="icon-main">
+                            <img src="assets/images/process1.png" alt="Project Introduction">
+                        </div>
+                        <div class="content-box">
+                            <h5>معرفی پروژه</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 text-center sm-m-b40">
+                    <div class="process-box">
+                        <img class="p-arrow" src="assets/images/p-arrow2-1.png" alt="arrow">
+                        <div class="number-box">02</div>
+                        <div class="icon-main p-b20">
+                            <img src="assets/images/process2-1.png" alt="Research &amp; Concept">
+                        </div>
+                        <div class="content-box">
+                            <h5>تحقیق در مورد پروژه</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                    <div class="process-box">
+                        <div class="number-box">03</div>
+                        <div class="icon-main p-b20">
+                            <img src="assets/images/process3-1.png" alt="Project Termination">
+                        </div>
+                        <div class="content-box">
+                            <h5>تکمیل پروژه</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="home4-benefits">
+        <div class="container">
+            <div class="flex-row">
+
+                <div class="col-md-6 col-sm-12 col-xs-12 align-self-center">
+                    <div class="home4-benefits-right">
+                        <div class="ot-heading left-align">
+                            <h6><span>مزایای ما
+</span></h6>
+                            <h2 class="main-heading">تجارت خود را رشد دهید
+                                با آژانس بازاریابی ما
+                            </h2>
+                        </div>
+                        <div class="row p-b30">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="benefits-block">
+                                    <h5 class="number">01.</h5>
+                                    <h5>تبلیغات PPC</h5>
+                                    <p>عبارات جستجوی ایده آل خود را هدف قرار دهید و در بالای نتایج جستجو قرار بگیرید.
+                                        PPC به شما اجازه می دهد.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="benefits-block">
+                                    <h5 class="number">02.</h5>
+                                    <h5>توسعه وب</h5>
+                                    <p>وب سایت شما باید فقط در عرض چند ثانیه بازدید کنندگان شما را تحت تأثیر قرار دهد.
+                                        اگر کند کار می کند ، اگر احساس می کند منسوخ شده است.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="benefits-block">
+                                    <h5 class="number">03.</h5>
+                                    <h5>مدیریت رسانه
+                                    </h5>
+                                    <p>برای تولید و ایجاد یک انجمن اختصاصی ، محتوای جذاب ایجاد ، منتشر و تبلیغ کنید.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="benefits-block">
+                                    <h5 class="number">04.</h5>
+                                    <h5>تحقیق کلمات کلیدی
+                                    </h5>
+                                    <p>ما کلمات کلیدی مضمونی را بر اساس قصد کاربر انتخاب می کنیم تا رتبه بندی را بر اساس
+                                        آنچه کاربران جستجو می کنند ، تقویت کنیم
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="home4-benefits-left">
+                        <img src="assets/images/image2-home4.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
 

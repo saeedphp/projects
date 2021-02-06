@@ -64,6 +64,13 @@ foreach ($redirect as $row){ ?>
     <link href="assets/panel/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/editors/quill/quill.snow.css">
     <link href="assets/panel/assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
+    <link rel="stylesheet" href="assets/vendor/c3/c3.min.css"/>
+    <link rel="stylesheet" href="assets/vendor/parsleyjs/css/parsley.css">
+    <link rel="stylesheet" href="assets/vendor/dropify/css/dropify.min.css">
+    <link rel="stylesheet" href="assets/vendor/multi-select/css/multi-select.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/custom_dt_html5.css">
@@ -572,13 +579,16 @@ foreach ($redirect as $row){ ?>
                             </svg>
                         </div>
                     </a>
-                    <ul class="collapse submenu list-unstyled <?php if ($active=='progress' || $active=='archive-progress'){echo 'show';} ?>" id="project-progress" data-parent="#accordionExample">
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='progress' || $active=='archive-progress' || $active=='tech'){echo 'show';} ?>" id="project-progress" data-parent="#accordionExample">
                         <li class="<?php if ($active=='progress'){echo 'active';} ?>">
                             <a href="adminprogress"> نوع پیشرفت </a>
                         </li>
                         <li class="<?php if ($active=='archive-progress'){echo 'active';} ?>">
                             <a href="adminprogress/archive"> بایگانی </a>
                         </li>
+                        <!--<li class="<?php /*if ($active=='tech'){echo 'active';} */?>">
+                            <a href="admintech"> تکنولوژی </a>
+                        </li>-->
                     </ul>
                 </li>
 
@@ -623,6 +633,48 @@ foreach ($redirect as $row){ ?>
                     <ul class="collapse submenu list-unstyled <?php if ($active=='stage' || $active=='archive-stage'){echo 'show';} ?>" id="stage" data-parent="#accordionExample">
                         <li class="<?php if ($active=='project'){echo 'active';} ?>">
                             <a href="adminstage"> مراحل </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a href="#admintech" <?php if ($active=='admintech'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-filter"></i>
+                            <span>مدیریت تکنولوژی ها</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='tech'){echo 'show';} ?>" id="admintech" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='tech'){echo 'active';} ?>">
+                            <a href="admintechnology"> تکنولوژی </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a href="#link" <?php if ($active=='link'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-link"></i>
+                            <span>مدیریت پیوند ها</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='link'){echo 'show';} ?>" id="link" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='link'){echo 'active';} ?>">
+                            <a href="adminlink"> لینک ها </a>
                         </li>
                     </ul>
                 </li>
@@ -688,6 +740,8 @@ foreach ($redirect as $row){ ?>
     <script src="assets/panel/assets/js/authentication/form-1.js"></script>
     <script src="assets/panel/plugins/date-picker/kamadatepicker.min.js"></script>
     <script src="assets/panel/plugins/jscolor/jscolor.js"></script>
+    <script src="assets/vendor/dropify/js/dropify.js"></script>
+    <script src="assets/assets/js/pages/forms/dropify.js"></script>
     <script>
         $('#html5-extension').DataTable( {
             dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',

@@ -60,15 +60,21 @@ class model_adminprogress extends Model{
             $date = date('Y/m/d');
             $date_jalali = self::gregorianToJalali($date, '/');
         }
+        $tech = '';
+        if (isset($data['tech'])) {
+            $tech = $data['tech'];
+            $tech = join(',', $tech);
+        }
+
         date_default_timezone_set('Asia/Tehran');
         $time=date('H:i:s');
 
         if ($id==''){
-            $sql='INSERT INTO tbl_progress (title,type,status,deadline,date,time) VALUE (?,?,?,?,?,?)';
-            $params=[$title,$type,$status,$deadline,$date_jalali,$time];
+            $sql='INSERT INTO tbl_progress (title,type,status,tech,deadline,date,time) VALUE (?,?,?,?,?,?,?)';
+            $params=[$title,$type,$status,$tech,$deadline,$date_jalali,$time];
         }else{
-            $sql='UPDATE tbl_progress SET title=?,type=?,status=?,deadline=?,date=?,time=? WHERE id=?';
-            $params=[$title,$type,$status,$deadline,$date_jalali,$time,$id];
+            $sql='UPDATE tbl_progress SET title=?,type=?,status=?,tech=?,deadline=?,date=?,time=? WHERE id=?';
+            $params=[$title,$type,$status,$tech,$deadline,$date_jalali,$time,$id];
         }
 
         $this->doQuery($sql,$params);
@@ -114,6 +120,65 @@ class model_adminprogress extends Model{
         $ids=join(',',$ids);
         $sql='DELETE FROM tbl_progress WHERE id IN ('.$ids.')';
         $this->doQuery($sql);
+
+    }
+
+    function getSketch($projectId){
+
+        $sql='SELECT * FROM tbl_sketch WHERE projectId=?';
+        $res=$this->doSelect($sql,[$projectId]);
+        return $res;
+
+    }
+
+    function addSketch($projectId, $file)
+    {
+
+        $fileName = $file['name'];
+        $fileSize = $file['size'];
+        $fileTmp = $file['tmp_name'];
+        $fileType = $file['type'];
+        $fileError = $file['error'];
+        $uploadOk = 1;
+        $targetMain = 'assets/images/sketch/';
+        $newName = 'sketch-' . time();
+
+        if ($fileType != 'image/jpg' AND $fileType != 'image/jpeg' AND $fileType != 'png') {
+            $uploadOk = 0;
+        }
+
+        if ($fileSize > 5242880) {
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 1) {
+
+            $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+            $target = $targetMain . $newName . '.' . $ext;
+
+            move_uploaded_file($fileTmp, $target);
+
+            $sql = 'INSERT INTO tbl_sketch (image,projectId) VALUES (?,?)';
+            $params = [$target,$projectId];
+            $this->doQuery($sql, $params);
+
+        }
+
+    }
+
+    function deleteSkecth($ids){
+
+        $ids=join(',',$ids);
+        $sql='DELETE FROM tbl_sketch WHERE id IN ('.$ids.')';
+        $this->doQuery($sql);
+
+    }
+
+    function getTech(){
+
+        $sql='SELECT * FROM tbl_tech';
+        $res=$this->doSelect($sql);
+        return $res;
 
     }
 

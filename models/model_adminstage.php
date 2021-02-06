@@ -26,6 +26,7 @@ class model_adminstage extends Model{
     function addStatus($data=[],$id){
 
         $title=$data['title'];
+        $progress=$data['progress'];
 
         if (isset($data['date'])){
             $date = $data['date'];
@@ -36,11 +37,11 @@ class model_adminstage extends Model{
         $time=date('H:i:s');
 
         if ($id==''){
-            $sql='INSERT INTO tbl_status (title,date,time) VALUES (?,?,?)';
-            $params=[$title,$date_jalali,$time];
+            $sql='INSERT INTO tbl_status (title,progress,date,time) VALUES (?,?,?,?)';
+            $params=[$title,$progress,$date_jalali,$time];
         }else{
-            $sql='UPDATE tbl_status SET title=? WHERE id=?';
-            $params=[$title,$id];
+            $sql='UPDATE tbl_status SET title=?,progress=? WHERE id=?';
+            $params=[$title,$progress,$id];
         }
 
         $this->doQuery($sql,$params);

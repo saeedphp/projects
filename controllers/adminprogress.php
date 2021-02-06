@@ -18,12 +18,14 @@ class adminprogress extends Controller{
         $project=$this->model->getProject();
         $progressInfo=$this->model->progressInfo($id);
         $status=$this->model->getStatus();
+        $getTech=$this->model->getTech();
 
         $data=[
             'progress'=>$progress,
             'projectType'=>$project,
             'progressInfo'=>$progressInfo,
-            'status'=>$status
+            'status'=>$status,
+            'tech'=>$getTech
         ];
 
         $this->view('admin/progress/index',$data,1,1);
@@ -78,6 +80,47 @@ class adminprogress extends Controller{
         if (isset($_POST['id'])){
             $ids=$_POST['id'];
             $this->model->delete($ids);
+        }
+
+    }
+
+    function sketch($idproject=''){
+
+        if (isset($_FILES['image'])){
+            $this->model->addSketch($idproject,$_FILES['image']);
+        }
+
+        $sketch=$this->model->getSketch($idproject);
+        $projectInfo=$this->model->progressInfo($idproject);
+
+        $data=[
+            'sketch'=>$sketch,
+            'projectInfo'=>$projectInfo
+        ];
+
+        $this->view('admin/progress/sketch',$data,1,1);
+
+    }
+
+    function tech($idproject){
+
+        $tech=$this->model->getTech($idproject);
+        $projectInfo=$this->model->progressInfo($idproject);
+
+        $data=[
+            'tech'=>$tech,
+            'projectInfo'=>$projectInfo
+        ];
+
+        $this->view('admin/progress/tech',$data,1,1);
+
+    }
+
+    function deletesketch(){
+
+        if (isset($_POST['id'])){
+            $ids=$_POST['id'];
+            $this->model->deleteSkecth($ids);
         }
 
     }

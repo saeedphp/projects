@@ -6,6 +6,8 @@ $font = $data['font'];
 
 ?>
 
+<script src="assets/vendor/ckeditor/ckeditor.js"></script>
+<script src="assets/vendor/ckeditor/config.js"></script>
 
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
@@ -76,6 +78,25 @@ $font = $data['font'];
                                     <input name="url" value="<?= $option['url']; ?>" class="form-control mb-2">
                                 </div>
 
+                                <div class="form-group">
+                                    <label>متن کپی رایت</label>
+                                    <textarea name="copyright">
+                                        <?= $option['copyright']; ?>
+                                    </textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>تلفن</label>
+                                    <input name="tel" value="<?= $option['tel']; ?>" class="form-control mb-2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>توضیح فوتر</label>
+                                    <textarea name="footer-desc">
+                                        <?= $option['footer-desc']; ?>
+                                    </textarea>
+                                </div>
+
                             </div>
 
                             <div class="col-md-6">
@@ -113,6 +134,16 @@ $font = $data['font'];
                                 <div class="form-group">
                                     <label>عنوان قالب مدیریت</label>
                                     <input name="title" value="<?= $option['title']; ?>" class="form-control mb-2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>ایمیل</label>
+                                    <input name="email" value="<?= $option['email']; ?>" class="form-control mb-2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>آدرس</label>
+                                    <input name="address" value="<?= $option['address']; ?>" class="form-control mb-2">
                                 </div>
 
                             </div>

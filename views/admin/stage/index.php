@@ -67,6 +67,12 @@ $statusInfo = $data['statusInfo'];
                                         </div>
 
                                         <div class="form-group">
+                                            <label>میزان پیشرفت</label>
+                                            <input type="text" name="progress" class="form-control mb-2"
+                                                   id="exampleInputUsername1" placeholder="پیشرفت پروژه">
+                                        </div>
+
+                                        <div class="form-group">
                                             <input type="hidden" name="date" class="form-control mb-2"
                                                    id="exampleInputUsername1" placeholder="تاریخ">
                                         </div>
@@ -117,6 +123,12 @@ $statusInfo = $data['statusInfo'];
                                         </div>
 
                                         <div class="form-group">
+                                            <label>میزان پیشرفت</label>
+                                            <input type="text" name="progress" class="form-control mb-2"
+                                                   id="exampleInputUsername1" placeholder="پیشرفت پروژه">
+                                        </div>
+
+                                        <div class="form-group">
                                             <input type="hidden" name="date" class="form-control mb-2"
                                                    id="exampleInputUsername1" placeholder="تاریخ">
                                         </div>
@@ -147,6 +159,7 @@ $statusInfo = $data['statusInfo'];
                                     <tr>
                                         <th class="text-center">ردیف</th>
                                         <th>نوع پروژه</th>
+                                        <th>میزان پیشرفت(%)</th>
                                         <th> ویرایش</th>
                                         <th>انتخاب
                                             <input id="select" onclick="selectAll();" type="checkbox">
@@ -164,6 +177,10 @@ $statusInfo = $data['statusInfo'];
                                             </td>
                                             <td>
                                                 <?= $row['title']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['progress']; ?>
+                                                %
                                             </td>
                                             <td>
                                                 <a style="cursor: pointer;" data-toggle="modal"
@@ -221,6 +238,7 @@ $statusInfo = $data['statusInfo'];
         $.post(url, data, function (msg) {
 
             $('input[name=title]').val(msg['title']);
+            $('input[name=progress]').val(msg['progress']);
 
         }, 'json');
 

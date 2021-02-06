@@ -2,6 +2,8 @@
 
 class profile extends Controller{
 
+    public $checkLogin='';
+
     public function __construct()
     {
         parent::__construct();
@@ -14,7 +16,43 @@ class profile extends Controller{
 
     function index(){
 
-        $this->view('panel/profile/index');
+        $userInfo=$this->model->getUserInfo();
+
+        $data=[
+            'userInfo'=>$userInfo
+        ];
+
+        $this->view('panel/profile/index',$data);
+
+    }
+
+    function editprofile(){
+
+        $userInfo=$this->model->getUserInfo();
+
+        $data=[
+            'userInfo'=>$userInfo
+        ];
+
+        $this->view('panel/profile/edit',$data);
+
+    }
+
+    function edituserprofile(){
+
+        $data=$_POST;
+        $this->model->editUserProfile($data);
+
+    }
+
+    function changepass(){
+
+        if (isset($_POST['password_old'])){
+            $data=$_POST;
+            $this->model->changePass($data);
+        }
+
+        $this->view('panel/profile/changepass');
 
     }
 

@@ -10,12 +10,12 @@
     <section class="p-t110 z-index-1 section-contact bg-white particles-js" data-color="#fe4c1c,#00c3ff,#0160e7"
              data-id="a1">
         <div class="container">
-            <div class="row flex-row">
+            <div class="row flex-row register-row">
 
-                <div class="col-md-2 col-xs-12 align-self-center"></div>
+                <div class="col-md-3 col-xs-12 align-self-center"></div>
 
-                <div class="col-md-8 col-xs-12 align-self-center">
-                    <div class="form-contact">
+                <div class="col-md-6 col-xs-12 align-self-center">
+                    <div class="form-contact form-register">
 
                         <form style="margin-bottom: 50px;" action="login/check" class="wpcf7-form" id="myform" method="POST">
 
@@ -29,12 +29,13 @@
                                 </span>
                             </p>
 
-                            <p>
+                            <p class="show-pass" style="position:relative;">
                                 <label>
                                     رمز عبور
                                 </label>
                                 <span class="wpcf7-form-control-wrap your-name">
-                                    <input value="<?php if (isset($_COOKIE['password'])){echo $_COOKIE['password'];} ?>" type="password" name="password" id="name" class="wpcf7-form-control wpcf7-text" required>
+                                    <i onclick="showpass2(this)" class="fa fa-eye"></i>
+                                    <input value="<?php if (isset($_COOKIE['password'])){echo $_COOKIE['password'];} ?>" type="password" name="password" id="password" class="wpcf7-form-control wpcf7-text" required>
                                 </span>
                             </p>
 
@@ -43,7 +44,7 @@
                                     مرا بخاطر بسپار
                                 </label>
                                 <span class="wpcf7-form-control-wrap your-name">
-                                    <input checked type="checkbox" value="true" <?php if (isset($_COOKIE['user_login'])){ ?>  <?php } ?>" name="remember" id="remember" class="wpcf7-form-control wpcf7-text">
+                                    <input name="remember" id="remember" class="wpcf7-form-control wpcf7-text remember-checkbox" checked type="checkbox" value="true" <?php if (isset($_COOKIE['user_login'])){ ?>  <?php } ?>">
                                 </span>
                             </p>
 
@@ -58,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2 col-xs-12 align-self-center"></div>
+            <div class="col-md-3 col-xs-12 align-self-center"></div>
 
         </div>
     </section>
@@ -66,7 +67,27 @@
 </div>
 
 
-<a id="back-to-top" href="#" class="show"><i class="flaticon-arrow-pointing-to-up"></i></a>
+<script>
 
+    function showpass2(tag) {
 
+        var imgTag = $(tag);
+        var eye = imgTag.attr('class');
+        if (eye == 'fa fa-eye') {
+            imgTag.attr('class', 'fa fa-eye-slash');
+        } else {
+            imgTag.attr('class', 'fa fa-eye');
+        }
+
+        var x =
+            document.getElementById("password");
+        if (x.type === 'password') {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+
+    }
+
+</script>
 

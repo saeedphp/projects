@@ -97,8 +97,11 @@ class model_form extends Model
 
             if (!empty($name)) {
                 $sql = 'INSERT INTO tbl_form (name,address,tel,islogo,logo,maincolor,accentcolor,isguideline,guideline,pros,sitecontent,sitedesign,rival,mainnotes,social,shop,product,specialproduct,photo,introduction,userfacilities,shopfacilities,user,date,time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+                $sql2='INSERT INTO tbl_progress (title,status,userId,date,time) VALUES (?,?,?,?,?)';
                 $params = [$name, $address, $tel, $isLogo, $target, $mainColor, $accentColor, $isGuideline, $fileTarget, $pros, $siteContent, $siteDesign, $rival, $notes, $social, $shop, $product, $specialProduct, $photo, $introduction, $userFacilities, $shopFacilities, $userId, $date_jalali, $time];
+                $params2=[$name,1,$userId,$date_jalali,$time];
                 $this->doQuery($sql, $params);
+                $this->doQuery($sql2, $params2);
             } else {
                 $error = 'لطفا نام مجموعه خود را وارد کنید!';
             }

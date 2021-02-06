@@ -23,7 +23,7 @@ class login extends Controller{
         if ($check==false){
             header('location:'.URL.'login');
         }else{
-            header('location:'.URL.'form');
+            header('location:'.URL.'profile');
         }
 
     }

@@ -6,11 +6,19 @@ $projectInfo = $data['projectInfo'];
 $projectType = $data['projectType'];
 $progressInfo = $data['progressInfo'];
 $status = $data['status'];
+$tech = $data['tech'];
 
 date_default_timezone_set('Asia/Tehran');
 $time = date('H:i:s');
 
 ?>
+
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+
+<style>
+    div.chosen-container.chosen-container-multi{width:auto !important;}
+</style>
 
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
@@ -37,8 +45,12 @@ $time = date('H:i:s');
 
                             </div>
                             <div class="col-xl-6 col-md-6 col-sm-12" style="display: flex;justify-content: flex-end;">
-                                <button <?php if ($level!=5){echo 'onclick="addToArchive();"';} ?> <?php if ($level==5){echo 'disabled';} ?> type="button" class="btn btn-warning mb-2 mr-2"
-                                        data-toggle="modal" data-target="#profileModal">
+                                <button <?php if ($level != 5) {
+                                    echo 'onclick="addToArchive();"';
+                                } ?> <?php if ($level == 5) {
+                                    echo 'disabled';
+                                } ?> type="button" class="btn btn-warning mb-2 mr-2"
+                                     data-toggle="modal" data-target="#profileModal">
                                     بایگانی
                                 </button>
                                 <button type="button" id="btn-submit" class="btn btn-success mb-2 mr-2"
@@ -106,6 +118,26 @@ $time = date('H:i:s');
                                         </div>
 
                                         <div class="form-group">
+                                            <label class="social-label">
+                                                تکنولوژی ها
+                                            </label>
+                                            <span class="wpcf7-form-control-wrap your-social">
+                                    <select data-placeholder="انتخاب کنید..." multiple="multiple" autocomplete="off"
+                                            name="tech[]"
+                                            class="wpcf7-form-control chosen">
+                                        <option>--انتحاب کنید--</option>
+                                        <?php
+                                        foreach ($tech as $row) { ?>
+                                            <option value="<?= $row['id']; ?>">
+                                                <?= $row['title']; ?>
+                                            </option>
+                                        <?php } ?>
+                                    </select>
+
+                                </span>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label>تاریخ تحویل</label>
                                             <input type="text" name="deadline" class="form-control mb-2"
                                                    id="date-picker" placeholder="تاریخ تحویل">
@@ -120,8 +152,12 @@ $time = date('H:i:s');
                                                    id="exampleInputUsername1" placeholder="تاریخ">
                                         </div>
 
-                                        <a id="submit" <?php if ($level!=5){echo 'onclick="submitForm();"';} ?>
-                                                <?php if ($level==5){echo 'disabled';} ?>
+                                        <a id="submit" <?php if ($level != 5) {
+                                            echo 'onclick="submitForm();"';
+                                        } ?>
+                                            <?php if ($level == 5) {
+                                                echo 'disabled';
+                                            } ?>
                                            class="btn btn-primary mt-2 mb-2 btn-block"> اجرای عملیات </a>
 
                                     </form>
@@ -192,6 +228,26 @@ $time = date('H:i:s');
                                         </div>
 
                                         <div class="form-group">
+                                            <label class="social-label">
+                                                تکنولوژی ها
+                                            </label>
+                                            <span class="wpcf7-form-control-wrap your-social">
+                                    <select data-placeholder="انتخاب کنید..." multiple="multiple" autocomplete="off"
+                                            name="tech[]"
+                                            class="wpcf7-form-control chosen">
+                                        <option>--انتحاب کنید--</option>
+                                        <?php
+                                        foreach ($tech as $row) { ?>
+                                            <option value="<?= $row['id']; ?>">
+                                                <?= $row['title']; ?>
+                                            </option>
+                                        <?php } ?>
+                                    </select>
+
+                                </span>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label>تاریخ تحویل</label>
                                             <input type="text" name="deadline" class="form-control mb-2"
                                                    id="date-picker-edit" placeholder="تاریخ تحویل">
@@ -206,8 +262,12 @@ $time = date('H:i:s');
                                                    id="exampleInputUsername1" placeholder="تاریخ">
                                         </div>
 
-                                        <a id="submit" <?php if ($level!=5){echo 'onclick="editForm();"';} ?>
-                                            <?php if ($level==5){echo 'disabled';} ?>
+                                        <a id="submit" <?php if ($level != 5) {
+                                            echo 'onclick="editForm();"';
+                                        } ?>
+                                            <?php if ($level == 5) {
+                                                echo 'disabled';
+                                            } ?>
                                            class="btn btn-primary mt-2 mb-2 btn-block"> اجرای عملیات </a>
 
                                     </form>
@@ -235,6 +295,7 @@ $time = date('H:i:s');
                                         <th>تاریخ ایجاد پروژه</th>
                                         <th>تاریخ تحویل</th>
                                         <th>روزهای باقیمانده</th>
+                                        <th>اسکچ ها</th>
                                         <th> ویرایش</th>
                                         <th>انتخاب
                                             <input id="select" onclick="selectAll();" type="checkbox">
@@ -282,7 +343,13 @@ $time = date('H:i:s');
                                                 <i class="fa fa-clock-o"></i>
                                             </td>
                                             <td>
-                                                <?= $row['deadline']; ?>
+                                                <?php
+                                                if ($row['deadline']!=''){
+                                                 echo $row['deadline'];
+                                                }else{
+                                                    echo 'مشخص نشده';
+                                                }
+                                                ?>
                                             </td>
                                             <td>
                                                 <?php
@@ -290,17 +357,17 @@ $time = date('H:i:s');
                                                 $date_jalali = Model::gregorianToJalali($date, '/');;
                                                 $date2 = $row['deadline'];
                                                 $days = (strtotime($date2) - strtotime($date_jalali)) / (60 * 60 * 24);
-                                                ?>
-                                                <span class="shadow-none <?php if ($days < 10) {
-                                                    echo 'force';
-                                                } elseif ($days >= 10 && $days < 20) {
-                                                    echo 'near';
-                                                } elseif ($days >= 20 && $days < 40) {
-                                                    echo
-                                                    'normal';
-                                                } elseif ($days >= 40) {
-                                                    echo 'deadline';
-                                                } ?>">
+                                                if ($row['deadline']!=''){ ?>
+                                                    <span class="shadow-none <?php if ($days < 10) {
+                                                        echo 'force';
+                                                    } elseif ($days >= 10 && $days < 20) {
+                                                        echo 'near';
+                                                    } elseif ($days >= 20 && $days < 40) {
+                                                        echo
+                                                        'normal';
+                                                    } elseif ($days >= 40) {
+                                                        echo 'deadline';
+                                                    } ?>">
                                                     <?php
                                                     if ($days > 0) {
                                                         echo $days . 'روز';
@@ -309,6 +376,19 @@ $time = date('H:i:s');
                                                     }
                                                     ?>
                                                 </span>
+                                                <?php }else{ ?>
+                                                    <p>
+                                                        مشخص نشده
+                                                    </p>
+                                                <?php } ?>
+                                            </td>
+
+                                            <td>
+                                                <a href="adminprogress/sketch/<?= $row['id']; ?>"
+                                                   style="cursor: pointer;"
+                                                   data-target="#editModal">
+                                                    <i class="fa fa-photo"></i>
+                                                </a>
                                             </td>
 
                                             <td>
@@ -345,8 +425,13 @@ $time = date('H:i:s');
 
 <script>
 
+
+    $(".chosen").chosen({
+        no_results_text: "نتیجه ای یافت نشد!"
+    });
+
     <?php
-    if ($level!=5){ ?>
+    if ($level != 5){ ?>
     $('#btn-submit').click(function () {
         $('form#myform').trigger('reset');
     });
@@ -370,6 +455,7 @@ $time = date('H:i:s');
             $('select[name=type]').val(msg['type']);
             $('select[name=status]').val(msg['status']);
             $('input[name=deadline]').val(msg['deadline']);
+            $('select[name=tech]').val(msg['tech[]']);
 
         }, 'json');
 
