@@ -2,6 +2,8 @@
 
 class Sketch extends Controller{
 
+    public $checkLogin='';
+
     public function __construct()
     {
         parent::__construct();

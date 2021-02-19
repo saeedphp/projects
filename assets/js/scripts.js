@@ -14,6 +14,17 @@
      * counter
      * --------------------------------------------------*/
 
+
+    /*
+    * click account box in responsive
+    * */
+
+    $(document).on('click', function (e) {
+        if ($('.dropdown').hasClass('open')) {
+            $('.dropdown').removeClass('open');
+        }
+    });
+
     $(window).on('scroll', function () {
         $('.ot-counter').each(function() {
             var pos_y   = $(this).offset().top - window.innerHeight;
@@ -854,5 +865,8 @@
 
 
 })( jQuery );
+
+
+
 
 

@@ -218,5 +218,20 @@
         </div>
     </section>
 
-</div>
+    <section class="layout-zebra-section home-section-analyzed">
+        <div class="layout-zebra-section-content home-section-analyzed-content clear">
+            <div class="home-section-logo-garden-wrapper">
+                <div class="home-section-logo-garden"></div>
+            </div>
+            <div class="home-section-analyzed-text">
+                <h3> مشتری های فراموج
+                    <span id="job-count">در 10 سال گذشته</span>
+                </h3>
+                <h4>
+                    فراموج تونسته با شرکت های بزرگ و کوچک زیادی همکاری داشته باشد
+                </h4>
+            </div>
+        </div>
+    </section>
 
+</div>

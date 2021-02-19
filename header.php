@@ -34,12 +34,14 @@
 
 </head>
 <?php
-$userId=Model::sessionGet('userId');
-$level=Model::getUserLevel();
-$name=Model::getUserName();
+$userId = Model::sessionGet('userId');
+$level = Model::getUserLevel();
+$name = Model::getUserName();
 ?>
 
-<body style="background: #fff;" class="">
+
+
+<body style="background: #fff;">
 
 <div id="page" class="site">
     <header id="site-header" class="site-header header-style-2 sticky-header header-fullwidth">
@@ -53,84 +55,33 @@ $name=Model::getUserName();
                             <div class="octf-col">
                                 <div id="site-logo" class="site-logo">
                                     <a href="<?= URL ?>">
-                                        <img class="logo-static" src="assets/images/optimized-nxo9.png" alt="Onum">
+                                        <img class="logo-static" src="assets/images/optimized-nxo9.png" alt="Faramouj">
                                     </a>
                                 </div>
                             </div>
                             <div class="octf-col">
                                 <nav id="site-navigation" class="main-navigation">
                                     <ul id="primary-menu" class="menu" style="display: flex;">
-                                        <?php
-                                        if ($userId==false){ ?>
-                                            <li>
-                                                <a href="">
-                                                    صفحه اصلی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="form">
-                                                    فرم نیازسنجی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="estimate">
-                                                    براورد هزینه
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    تیم ما
-                                                </a>
-                                            </li>
                                         <li>
-                                            <a href="register">
-                                                ثبت نام
+                                            <a href="">
+                                                صفحه اصلی
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="login">
-                                                ورود
+                                            <a href="form">
+                                                فرم نیازسنجی
                                             </a>
                                         </li>
-                                        <?php }else{ ?>
-                                            <li>
-                                                <a href="">
-                                                    صفحه اصلی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="form">
-                                                    فرم نیازسنجی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="estimate">
-                                                    براورد هزینه
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    تیم ما
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a>
-                                                    کاریر عزیز،
-                                                    <?= $name; ?>
-                                                    خوش آمدین
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="profile">
-                                                    پروفایل
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="<?= URL ?>admindashboard/logout">
-                                                    خروج
-                                                </a>
-                                            </li>
-                                        <?php } ?>
+                                        <li>
+                                            <a href="estimate">
+                                                براورد هزینه
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="portfolio">
+                                                نمونه کارها
+                                            </a>
+                                        </li>
                                     </ul>
                                 </nav><!-- #site-navigation -->
                             </div>
@@ -141,6 +92,47 @@ $name=Model::getUserName();
                                     <div class="octf-header-module">
 
                                         <!-- Form Search on Header -->
+                                        <div class="account-box">
+                                            <div class="nav-account d-block pl">
+                                            <span class="icon-account">
+                                                <img src="assets/images/man.png" class="avator">
+                                            </span>
+                                                <span class="title-account">
+                                                    <?php
+                                                    if ($userId==false){ ?>
+                                                        حساب کاربری
+                                                    <?php }else{ ?>
+                                                    کاربر عزیز،
+                                                        <?= $name; ?>
+                                                        خوش آمدین
+                                                    <?php } ?>
+                                                </span>
+                                                <div class="dropdown-menu">
+                                                    <ul class="account-uls mb-0">
+                                                        <?php
+                                                        if ($userId==false){ ?>
+
+                                                            <li class="account-item">
+                                                                <a href="register" class="account-link">ثبت نام</a>
+                                                            </li>
+                                                            <li class="account-item">
+                                                                <a href="login" class="account-link">ورود</a>
+                                                            </li>
+
+                                                        <?php }else{ ?>
+
+                                                            <li class="account-item">
+                                                                <a href="profile" class="account-link">پروفایل</a>
+                                                            </li>
+                                                            <li class="account-item">
+                                                                <a href="<?= URL ?>admindashboard/logout" class="account-link">خروج</a>
+                                                            </li>
+
+                                                        <?php } ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="octf-header-module">
@@ -177,77 +169,26 @@ $name=Model::getUserName();
                 <div class="mmenu_wrapper">
                     <div class="mobile_nav">
                         <ul style="display: flex;flex-direction: column;" id="menu-main-menu" class="mobile_mainmenu">
-                            <?php
-                            if ($userId==false){ ?>
-                                <li>
-                                    <a href="">
-                                        صفحه اصلی
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form">
-                                        فرم نیازسنجی
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        براورد هزینه
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        تیم ما
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="register">
-                                        ثبت نام
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login">
-                                        ورود
-                                    </a>
-                                </li>
-                            <?php }else{ ?>
-                                <li>
-                                    <a href="">
-                                        صفحه اصلی
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form">
-                                        فرم نیازسنجی
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        براورد هزینه
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        تیم ما
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        کاریر عزیز،
-                                        <?= $name; ?>
-                                        خوش آمدین
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile">
-                                        پروفایل
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?= URL ?>admindashboard/logout">
-                                        خروج
-                                    </a>
-                                </li>
-                            <?php } ?>
+                            <li>
+                                <a href="">
+                                    صفحه اصلی
+                                </a>
+                            </li>
+                            <li>
+                                <a href="form">
+                                    فرم نیازسنجی
+                                </a>
+                            </li>
+                            <li>
+                                <a href="estimate">
+                                    براورد هزینه
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portfolio">
+                                    نمونه کارها
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -261,3 +202,4 @@ $name=Model::getUserName();
 
 </body>
 </html>
+

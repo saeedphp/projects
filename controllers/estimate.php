@@ -9,6 +9,7 @@ class Estimate extends Controller{
 
     function index(){
 
+        $visit=Model::visit();
         $this->view('estimate/index');
 
     }

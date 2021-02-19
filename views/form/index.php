@@ -1,6 +1,7 @@
 <?php
 
 $social = $data['social'];
+$userId = Model::sessionGet('userId');
 
 ?>
 
@@ -21,229 +22,256 @@ $social = $data['social'];
     </div>
     <section class="p-t110 z-index-1 section-contact bg-white particles-js" data-color="#fe4c1c,#00c3ff,#0160e7"
              data-id="a1">
-        <div class="container">
-            <div class="row flex-row">
 
-                <div class="col-md-2 col-xs-12 align-self-center"></div>
+        <?php
+        if ($userId==false){ ?>
 
-                <div class="col-md-8 col-xs-12 align-self-center">
-                    <div class="form-contact">
+            <div class="container">
+                <div class="row flex-row register-row">
+                    <div class="col-md-4 col-xs-12 align-self-center">
 
-                        <?php
+                    </div>
+                    <div class="col-md-4 col-xs-12 align-self-center col-needs-form">
+                        <p style="color: #000;">
+                            برای ورود به فرم نیاز سنجی ابتدا وارد ساید شوید.
+                        </p>
+                        <p>
+                            <a href="login">
+                                <button type="submit" form="myform" class="octf-btn octf-btn-primary octf-btn-icon">
+                                    ورود<i class="flaticon-right-arrow-1"></i></button>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 align-self-center">
+                    </div>
+                </div>
+            </div>
 
-                        if (isset($_GET['message'])){
+        <?php }else{ ?>
 
-                            if (@$_GET['message']!=''){ ?>
+            <div class="container">
+                <div class="row flex-row">
 
-                                <p class="error"><?= $_GET['message']; ?></p>
+                    <div class="col-md-2 col-xs-12 align-self-center"></div>
 
-                            <?php }else{ ?>
+                    <div class="col-md-8 col-xs-12 align-self-center">
+                        <div class="form-contact form-nedds">
 
-                                <p class="success">
-                                    فرم نیازسنجی شما با موفقیت ارسال شد
-                                </p>
+                            <?php
 
-                            <?php } } ?>
+                            if (isset($_GET['message'])){
 
-                        <form style="margin-bottom: 50px;" action="form/index" enctype="multipart/form-data"
-                              class="wpcf7-form" id="myform" method="POST">
-                            <p>
-                                <label>
-                                    نام شرکت/مجموعه شما چیست؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-name">
+                                if (@$_GET['message']!=''){ ?>
+
+                                    <p class="error"><?= $_GET['message']; ?></p>
+
+                                <?php }else{ ?>
+
+                                    <p class="success">
+                                        فرم نیازسنجی شما با موفقیت ارسال شد
+                                    </p>
+
+                                <?php } } ?>
+
+                            <form style="margin-bottom: 50px;" action="form/index" enctype="multipart/form-data"
+                                  class="wpcf7-form" id="myform" method="POST">
+                                <p>
+                                    <label>
+                                        نام شرکت/مجموعه شما چیست؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-name">
                                     <input type="text" name="name" id="name" class="wpcf7-form-control wpcf7-text" required
                                            placeholder="* نام شرکت ...">
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    آدرس دقیق شرکت/مجموعه شما چیست؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        آدرس دقیق شرکت/مجموعه شما چیست؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="address" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="* تهران، میدان آزادی خیابان نیلوفر..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    تمامی شماره تماس هاس شرکت/مجموعه شما چیست؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        تمامی شماره تماس هاس شرکت/مجموعه شما چیست؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="tel" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="021-12345678 - 021-98745632 - 09121234567 - ..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label class="shop-label">
-                                    آیا مجموعه شما لوگو طراحی شده دارد؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label class="shop-label">
+                                        آیا مجموعه شما لوگو طراحی شده دارد؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>بله</label>
                                     <input type="radio" name="islogo" id="yes"
                                            class="wpcf7-form-control-wrap your-message" value="yes"
                                            onchange="displayLogo(this.value)">
                                 </span>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>خیر</label>
                                     <input type="radio" name="islogo" id="no"
                                            class="wpcf7-form-control-wrap your-message" value="no"
                                            onchange="displayLogo(this.value)">
                                 </span>
-                            </p>
+                                </p>
 
-                            <div id="yesLogo" style="display:none;"><br/>
-                                <p>
-                                    <label>
-                                        لوگو مجموعه خود را در صورت وجود بفرستید
-                                    </label>
+                                <div id="yesLogo" style="display:none;"><br/>
+                                    <p>
+                                        <label>
+                                            لوگو مجموعه خود را در صورت وجود بفرستید
+                                        </label>
 
 
-                                <div class="card" id="showText">
-                                    <div class="header">
-                                        <h2>اندازه فایل محدود <small>سعی کنید فایل بزرگتر از 5 مگابایت آپلود
-                                                نکنید</small></h2>
+                                    <div class="card" id="showText">
+                                        <div class="header">
+                                            <h2>اندازه فایل محدود <small>سعی کنید فایل بزرگتر از 5 مگابایت آپلود
+                                                    نکنید</small></h2>
+                                        </div>
+                                        <div class="body">
+                                            <input type="file" name="logo" data-allowed-file-extensions="pdf png jpg jpeg webp zip eps ai" data-max-file-size="500m" class="dropify">
+                                        </div>
                                     </div>
-                                    <div class="body">
-                                        <input type="file" name="logo" data-allowed-file-extensions="pdf png jpg jpeg webp zip eps ai" data-max-file-size="500m" class="dropify">
-                                    </div>
+
+                                    </p>
                                 </div>
 
-                                </p>
-                            </div>
+                                <div id="noLogo" style="display:none;">
+                                    <br/>
 
-                            <div id="noLogo" style="display:none;">
-                                <br/>
+                                </div>
 
-                            </div>
-
-                            <p>
-                                <label>
-                                    کد رنگ سازمانی مجموعه شما
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-name">
+                                <p>
+                                    <label>
+                                        کد رنگ سازمانی مجموعه شما
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-name">
                                     <input type="text" name="maincolor" id="color1"
                                            class="wpcf7-form-control wpcf7-text jscolor">
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    کد رنگ سازمانی دوم مجموعه شما
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-name">
+                                <p>
+                                    <label>
+                                        کد رنگ سازمانی دوم مجموعه شما
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-name">
                                     <input type="text" name="accentcolor" id="color1"
                                            class="wpcf7-form-control wpcf7-text jscolor">
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label class="shop-label">
-                                    آیا مجموعه Guideline دارد؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label class="shop-label">
+                                        آیا مجموعه Guideline دارد؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>بله</label>
                                     <input type="radio" name="isguideline" id="yes"
                                            class="wpcf7-form-control-wrap your-message" value="yes"
                                            onchange="displayGuideline(this.value)">
                                 </span>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>خیر</label>
                                     <input type="radio" name="isguideline" id="no"
                                            class="wpcf7-form-control-wrap your-message" value="no"
                                            onchange="displayGuideline(this.value)">
                                 </span>
-                            </p>
+                                </p>
 
-                            <div id="yesGuideline" style="display:none;"><br/>
-                                <p>
-                                    <label>
-                                        ارسال guideline مجموعه شما
-                                    </label>
-                                <div class="card">
-                                    <div class="header">
-                                        <h2>اندازه فایل محدود <small>سعی کنید فایل بزرگتر از 500 مگابایت آپلود نکنید</small>
-                                        </h2>
+                                <div id="yesGuideline" style="display:none;"><br/>
+                                    <p>
+                                        <label>
+                                            ارسال guideline مجموعه شما
+                                        </label>
+                                    <div class="card">
+                                        <div class="header">
+                                            <h2>اندازه فایل محدود <small>سعی کنید فایل بزرگتر از 500 مگابایت آپلود نکنید</small>
+                                            </h2>
+                                        </div>
+                                        <div class="body">
+                                            <input type="file" name="guideline" data-allowed-file-extensions="pdf zip docx txt xlsx csv" data-max-file-size="500m" class="dropify">
+                                        </div>
                                     </div>
-                                    <div class="body">
-                                        <input type="file" name="guideline" data-allowed-file-extensions="pdf zip docx txt xlsx csv" data-max-file-size="500m" class="dropify">
-                                    </div>
+
+                                    </p>
                                 </div>
 
-                                </p>
-                            </div>
+                                <div id="noGuideline" style="display:none;">
+                                    <br/>
 
-                            <div id="noGuideline" style="display:none;">
-                                <br/>
+                                </div>
 
-                            </div>
-
-                            <p>
-                                <label>
-                                    مزیت شما نسبت به دیگر رقبا
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        مزیت شما نسبت به دیگر رقبا
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="pros" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="* مزیت شما..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    معرفی سایت هایی که از نظر محتوا به کار شما نزدیک می باشند
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        معرفی سایت هایی که از نظر محتوا به کار شما نزدیک می باشند
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="sitecontent" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="* از نظر محتوا..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    معرفی سایت هایی که از نظر طراحی و دیزاین به کار شما نزدیک می باشند
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        معرفی سایت هایی که از نظر طراحی و دیزاین به کار شما نزدیک می باشند
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="sitedesign" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="* از نظر طراحی..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    مطرح ترین رقبا که کارشان مشابه کار شما می باشند
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        مطرح ترین رقبا که کارشان مشابه کار شما می باشند
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="rival" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="* رقبا..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label>
-                                    نکات با اهمیت که باید در سایت لحاظ شود
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label>
+                                        نکات با اهمیت که باید در سایت لحاظ شود
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <textarea type="text" name="mainnotes" id="message"
                                               class="wpcf7-form-control wpcf7-textarea"
                                               placeholder="*نکات مهم..."></textarea>
                                 </span>
-                            </p>
+                                </p>
 
 
-                            <p class="row2">
-                                <label class="social-label">
-                                    شکه های اجتماعی که تمایل دارید در سایت استفاده شوند
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-social">
+                                <p class="row2">
+                                    <label class="social-label">
+                                        شکه های اجتماعی که تمایل دارید در سایت استفاده شوند
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-social">
                                     <select data-placeholder="انتخاب کنید..." multiple="multiple" autocomplete="off"
                                             name="social[]" required
                                             class="wpcf7-form-control chosen-select">
@@ -257,120 +285,124 @@ $social = $data['social'];
                                     </select>
 
                                 </span>
-                            </p>
+                                </p>
 
-                            <p>
-                                <label class="shop-label">
-                                    آیا سایت شما فروشگاهی می باشد؟
-                                </label>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                <p>
+                                    <label class="shop-label">
+                                        آیا سایت شما فروشگاهی می باشد؟
+                                    </label>
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>بله</label>
                                     <input type="radio" name="yesOrNo" id="yes"
                                            class="wpcf7-form-control-wrap your-message" value="yes"
                                            onchange="displayQuestion(this.value)">
                                 </span>
-                                <span class="wpcf7-form-control-wrap your-message">
+                                    <span class="wpcf7-form-control-wrap your-message">
                                     <label>خیر</label>
                                     <input type="radio" name="yesOrNo" id="no"
                                            class="wpcf7-form-control-wrap your-message" value="no"
                                            onchange="displayQuestion(this.value)">
                                 </span>
-                            </p>
+                                </p>
 
-                            <div id="yesQuestion" style="display:none;"><br/>
-                                <p>
-                                    <label>
-                                        چه محصولاتی در حال حاظر در فروشگاه خود عرضه می کنید؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                <div id="yesQuestion" style="display:none;"><br/>
+                                    <p>
+                                        <label>
+                                            چه محصولاتی در حال حاظر در فروشگاه خود عرضه می کنید؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                         <textarea type="text" name="product" id="message"
                                                   class="wpcf7-form-control wpcf7-textarea"
                                                   placeholder="* محصولات..."></textarea>
                                 </span>
-                                </p>
+                                    </p>
 
-                                <p>
-                                    <label>
-                                        چه محصولاتی فروش آن ها در فروشگاه اینترنتی شما از اهمیت خاصی برخوردار است؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                    <p>
+                                        <label>
+                                            چه محصولاتی فروش آن ها در فروشگاه اینترنتی شما از اهمیت خاصی برخوردار است؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                         <textarea type="text" name="specialproduct" id="message"
                                                   class="wpcf7-form-control wpcf7-textarea"
                                                   placeholder="* محصولات با اهمیت..."></textarea>
                                 </span>
-                                </p>
+                                    </p>
 
-                                <p>
-                                    <label class="shop-label">
-                                        آیا از محصولات شما عکس برداری شده است؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                    <p>
+                                        <label class="shop-label">
+                                            آیا از محصولات شما عکس برداری شده است؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                     <label>بله</label>
                                     <input type="radio" name="photo" id="yes"
                                            class="wpcf7-form-control-wrap your-message" value="1">
                                 </span>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                        <span class="wpcf7-form-control-wrap your-message">
                                     <label>خیر</label>
                                     <input type="radio" name="photo" id="no"
                                            class="wpcf7-form-control-wrap your-message" value="0">
                                 </span>
-                                </p>
+                                    </p>
 
-                                <p>
-                                    <label>
-                                        امکانات مدنظر شما برای معرفی محصول چیست؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                    <p>
+                                        <label>
+                                            امکانات مدنظر شما برای معرفی محصول چیست؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                         <textarea type="text" name="introduction" id="message"
                                                   class="wpcf7-form-control wpcf7-textarea"
                                                   placeholder="* معرفی محصول..."></textarea>
                                 </span>
-                                </p>
+                                    </p>
 
-                                <p>
-                                    <label>
-                                        در صفحه معرفی محصول، برای کاربر چه امکناتی مد مظرتان است؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                    <p>
+                                        <label>
+                                            در صفحه معرفی محصول، برای کاربر چه امکناتی مد مظرتان است؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                         <textarea type="text" name="userfacilities" id="message"
                                                   class="wpcf7-form-control wpcf7-textarea"
                                                   placeholder="* امکانات کاربر در فروشگاه..."></textarea>
                                 </span>
-                                </p>
+                                    </p>
 
-                                <p>
-                                    <label>
-                                        امکانات فروشگاهی که مدنظر دارید چیست؟
-                                    </label>
-                                    <span class="wpcf7-form-control-wrap your-message">
+                                    <p>
+                                        <label>
+                                            امکانات فروشگاهی که مدنظر دارید چیست؟
+                                        </label>
+                                        <span class="wpcf7-form-control-wrap your-message">
                                         <textarea type="text" name="shopfacilities" id="message"
                                                   class="wpcf7-form-control wpcf7-textarea"
                                                   placeholder="* امکانات فروشگاه..."></textarea>
                                 </span>
+                                    </p>
+
+                                </div>
+
+                                <div id="noQuestion" style="display:none;">
+                                    <br/>
+
+                                </div>
+
+                                <input type="hidden" name="date">
+
+                                <p>
+                                    <button type="submit" form="myform" class="octf-btn octf-btn-primary octf-btn-icon">
+                                        ارسال <i class="flaticon-right-arrow-1"></i></button>
                                 </p>
+                            </form>
 
-                            </div>
-
-                            <div id="noQuestion" style="display:none;">
-                                <br/>
-
-                            </div>
-
-                            <input type="hidden" name="date">
-
-                            <p>
-                                <button type="submit" form="myform" class="octf-btn octf-btn-primary octf-btn-icon">
-                                    ارسال <i class="flaticon-right-arrow-1"></i></button>
-                            </p>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-md-2 col-xs-12 align-self-center"></div>
+
             </div>
 
-            <div class="col-md-2 col-xs-12 align-self-center"></div>
+        <?php } ?>
 
-        </div>
+
     </section>
 
 </div>

@@ -2,20 +2,14 @@
 
 class Form extends Controller{
 
-    public $checkLogin='';
-
     public function __construct()
     {
         parent::__construct();
-        Model::sessionInit();
-        $this->checkLogin=Model::sessionGet('userId');
-        if ($this->checkLogin==false){
-            header('location:'.URL.'login');
-        }
     }
 
     function index(){
 
+        $visit=Model::visit();
         if (isset($_POST['name'])){
             $this->model->addForm($_POST,$_FILES['logo'],$_FILES['guideline']);
         }

@@ -679,6 +679,33 @@ foreach ($redirect as $row){ ?>
                     </ul>
                 </li>
 
+                <li class="menu">
+                    <a href="#portfolio" <?php if ($active=='portfolio' || $active=='cat'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-link"></i>
+                            <span>مدیریت نمونه کارها</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='portfolio' || $active=='addportfolio' || $active=='cat'){echo 'show';} ?>" id="portfolio" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='portfolio'){echo 'active';} ?>">
+                            <a href="adminportfolio"> نمونه کارها </a>
+                        </li>
+                        <li class="<?php if ($active=='addportfolio'){echo 'active';} ?>">
+                            <a href="adminportfolio/addportfolio"> افزودن </a>
+                        </li>
+                        <li class="<?php if ($active=='cat'){echo 'active';} ?>">
+                            <a href="adminportfolio/cat"> دسته بندی ها </a>
+                        </li>
+                    </ul>
+                </li>
+
 
             </ul>
             <!-- <div class="shadow-bottom"></div> -->

@@ -19,10 +19,10 @@ $progressInfo=$data['progressInfo'];
 </div>
 
 
-<div class="row col-12" id="lightgallery">
+<div class="row col-12" id="">
     <?php
     foreach ($sketch as $row){ ?>
-    <div class="col-md-4">
+    <div class="col-md-4" id="lightgallery">
         <a href="<?= $row['image']; ?>">
             <img src="<?= $row['image']; ?>">
         </a>
@@ -55,6 +55,7 @@ $progressInfo=$data['progressInfo'];
     $lightGallery.on('onBeforeSlide.lg', function(event, prevIndex, index){
         $('.lg-outer').css('background-color', colours[index])
     });
+
 
 </script>
 
