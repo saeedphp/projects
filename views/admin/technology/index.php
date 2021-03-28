@@ -1,5 +1,5 @@
 <?php
-$active = 'admintech';
+$active = 'tech';
 require('views/admin/layout.php');
 $tech = $data['tech'];
 $techInfo = $data['techInfo'];

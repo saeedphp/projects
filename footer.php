@@ -154,7 +154,6 @@ $link=Model::link();
 <script src="assets/js/header-mobile.js"></script>
 <script src="assets/panel/plugins/jscolor/jscolor.js"></script>
 <script src="assets/js/dropify/js/dropify.js"></script>
-<script src="assets/js/lightgallery-all.js"></script>
 
 <script src="assets/assets/bundles/libscripts.bundle.js"></script>
 <script src="assets/assets/bundles/vendorscripts.bundle.js"></script>

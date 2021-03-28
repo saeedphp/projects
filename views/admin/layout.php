@@ -59,6 +59,8 @@ foreach ($redirect as $row){ ?>
     <link href="assets/panel/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="assets/panel/assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/panel/assets/css/apps/contacts.css">
+    <link rel="stylesheet" href="assets/panel/assets/css/apps/todolist.css">
+    <link rel="stylesheet" href="assets/panel/assets/css/structure.css">
 
     <link href="assets/panel/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
     <link href="assets/panel/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css"/>
@@ -85,6 +87,17 @@ foreach ($redirect as $row){ ?>
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/parsleyjs/css/parsley.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/assets/css/authentication/form-1.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/date-picker/kamadatepicker.min.css">
+    <link href="assets/panel/assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/plugins/fullcalendar/custom-fullcalendar.advance.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+    <link href="assets/panel/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+    <link href="assets/panel/assets/css/apps/invoice.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/assets/css/apps/scrumboard.css" rel="stylesheet" type="text/css" />
+    <link href="assets/panel/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/panel/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 <body>
@@ -428,6 +441,81 @@ foreach ($redirect as $row){ ?>
                 <?php } ?>
 
                 <li class="menu">
+                    <a href="#payFactor"  <?php if ($active=='payFactor' || $active=='addfactor' || $active=='archiveFactor'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-money"></i>
+                            <span>مدیریت پرداخت فاکتور</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='payFactor' || $active=='addfactor' || $active=='archiveFactor'){echo 'show';} ?>" id="payFactor" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='payFactor'){echo 'active';} ?>">
+                            <a href="adminpayfactor"> پرداخت فاکتور ها </a>
+                        </li>
+                        <li class="<?php if ($active=='addfactor'){echo 'active';} ?>">
+                            <a href="adminpayfactor/addfactor"> افزودن </a>
+                        </li>
+                        <li class="<?php if ($active=='archiveFactor'){echo 'active';} ?>">
+                            <a href="adminpayfactor/getarchive"> بایگانی </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a href="#support-team"  <?php if ($active=='support-team'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-user-circle"></i>
+                            <span>مدیریت اعضای تیم فنی</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='support-team'){echo 'show';} ?>" id="support-team" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='support-team'){echo 'active';} ?>">
+                            <a href="adminsupportteam"> اعضای فنی </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a href="#board"  <?php if ($active=='board' || $active=='board-type' || $active=='board-archive'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-tasks"></i>
+                            <span>مدیریت برد پروژه ها</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='board' || $active=='board-type' || $active=='board-archive'){echo 'show';} ?>" id="board" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='board'){echo 'active';} ?>">
+                            <a href="adminboard"> برد پروژه ها </a>
+                        </li>
+                        <li class="<?php if ($active=='board-archive'){echo 'active';} ?>">
+                            <a href="adminboard/getarchive"> برد های بایگانی شده </a>
+                        </li>
+                        <li class="<?php if ($active=='board-type'){echo 'active';} ?>">
+                            <a href="adminboardtype"> نوع برد ها </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
                     <a href="#form"  <?php if ($active=='form'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
                         <div class="">
                             <i class="fa fa-file-text"></i>
@@ -638,7 +726,7 @@ foreach ($redirect as $row){ ?>
                 </li>
 
                 <li class="menu">
-                    <a href="#admintech" <?php if ($active=='admintech'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                    <a href="#stage" <?php if ($active=='tech'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
                         <div class="">
                             <i class="fa fa-filter"></i>
                             <span>مدیریت تکنولوژی ها</span>
@@ -651,9 +739,30 @@ foreach ($redirect as $row){ ?>
                             </svg>
                         </div>
                     </a>
-                    <ul class="collapse submenu list-unstyled <?php if ($active=='tech'){echo 'show';} ?>" id="admintech" data-parent="#accordionExample">
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='tech'){echo 'show';} ?>" id="stage" data-parent="#accordionExample">
                         <li class="<?php if ($active=='tech'){echo 'active';} ?>">
                             <a href="admintechnology"> تکنولوژی </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a href="#insta" <?php if ($active=='insta'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
+                        <div class="">
+                            <i class="fa fa-filter"></i>
+                            <span>مدیریت کاربران اینستاگرام</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="collapse submenu list-unstyled <?php if ($active=='insta'){echo 'show';} ?>" id="insta" data-parent="#accordionExample">
+                        <li class="<?php if ($active=='insta'){echo 'active';} ?>">
+                            <a href="admininsta"> کاربران اینستاگرام </a>
                         </li>
                     </ul>
                 </li>
@@ -737,6 +846,16 @@ foreach ($redirect as $row){ ?>
     <script src="assets/panel/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/panel/assets/js/app.js"></script>
     <script src="assets/panel/assets/js/apps/contact.js"></script>
+    <script src="assets/panel/assets/js/apps/todoList.js"></script>
+    <script src="assets/panel/plugins/highlight/monokai-sublime.css"></script>
+    <script src="assets/panel/plugins/fullcalendar/moment.min.js"></script>
+    <script src="assets/panel/plugins/fullcalendar/flatpickr.js"></script>
+    <script src="assets/panel/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="assets/panel/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="assets/panel/plugins/fullcalendar/custom-fullcalendar.advance.js"></script>
     <script>
         $(document).ready(function () {
             App.init();
@@ -749,6 +868,7 @@ foreach ($redirect as $row){ ?>
     <script src="assets/panel/plugins/apex/apexcharts.min.js"></script>
     <script src="assets/panel/assets/js/dashboard/dash_1.js"></script>
     <script src="assets/panel/assets/js/ie11fix/fn.fix-padStart.js"></script>
+    <script src="assets/panel/assets/js/apps/scrumboard.js"></script>
     <script src="assets/panel/assets/js/scrollspyNav.js"></script>
     <script src="assets/panel/plugins/editors/quill/quill.js"></script>
     <script src="assets/panel/assets/js/apps/todoList.js"></script>
@@ -769,6 +889,9 @@ foreach ($redirect as $row){ ?>
     <script src="assets/panel/plugins/jscolor/jscolor.js"></script>
     <script src="assets/vendor/dropify/js/dropify.js"></script>
     <script src="assets/assets/js/pages/forms/dropify.js"></script>
+    <script src="assets/panel/assets/js/ie11fix/fn.fix-padStart.js"></script>
+    <script src="assets/panel/assets/js/apps/notes.js"></script>
+    <script src="assets/panel/assets/js/apps/invoice.js"></script>
     <script>
         $('#html5-extension').DataTable( {
             dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',

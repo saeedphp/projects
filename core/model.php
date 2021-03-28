@@ -137,7 +137,7 @@ class Model{
     public static function link(){
 
         $sql='SELECT * FROM tbl_link';
-        $res=self::doSelect($sql,);
+        $res=self::doSelect($sql);
         return $res;
 
     }

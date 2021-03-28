@@ -1,6 +1,6 @@
 <?php
 
-class adminteam extends Controller{
+class admincalendar extends Controller{
 
     public function __construct()
     {
@@ -14,13 +14,19 @@ class adminteam extends Controller{
 
     function index(){
 
-        $team=$this->model->getTeam();
+        $calendar=$this->model->getCalendar();
 
         $data=[
-            'team'=>$team
+            'calendar'=>$calendar
         ];
 
-        $this->view('admin/team/index',$data,1,1);
+        $this->view('admin/calendar/index',$data,1,1);
+
+    }
+
+    function addcalendar($id=''){
+
+        $this->model->addCalendar($_POST,$id);
 
     }
 

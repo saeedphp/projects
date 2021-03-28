@@ -221,7 +221,7 @@
 
 
         /**
-         * Add a single new row or multiple rows of data to the table. Please note
+         * Add a single new row or multiple rows of data to the table. Please board
          * that this is suitable for client-side processing only - if you are using
          * server-side processing (i.e. "bServerSide": true), then to add data, you
          * must add it to the data source, i.e. the server-side, through an Ajax call.
@@ -685,7 +685,7 @@
          * function. With this function you can have a DataTables table go to the next,
          * previous, first or last pages.
          *  @param {string|int} mAction Paging action to take: "first", "previous", "next" or "last"
-         *    or page number to jump to (integer), note that page 0 is the first page.
+         *    or page number to jump to (integer), board that page 0 is the first page.
          *  @param {bool} [bRedraw=true] Redraw the table or not
          *  @dtopt API
          *  @deprecated Since v1.10
@@ -6445,7 +6445,7 @@
      *  @param {object} settings dataTables settings object
      *  @param {int} level log error messages, or display them to the project
      *  @param {string} msg error message
-     *  @param {int} tn Technical note id to get more information about the error.
+     *  @param {int} tn Technical board id to get more information about the error.
      *  @memberof DataTable#oApi
      */
     function _fnLog( settings, level, msg, tn )
@@ -6612,7 +6612,7 @@
 
     /**
      * Fire callback functions and trigger events. Note that the loop over the
-     * callback array store is done backwards! Further note that you do not want to
+     * callback array store is done backwards! Further board that you do not want to
      * fire off triggers in time sensitive applications (for example cell creation)
      * as its slow.
      *  @param {object} settings dataTables settings object
@@ -8279,7 +8279,7 @@
                     return;
                 }
 
-                // Update the colspan for the details rows (note, only if it already has
+                // Update the colspan for the details rows (board, only if it already has
                 // a colspan)
                 var row, visible = _fnVisbleColumns( ctx );
 
@@ -9288,7 +9288,7 @@
             var rows      = $.map( settings.aoData, function (r) { return r.nTr; } );
             var i, ien;
 
-            // Flag to note that the table is currently being destroyed - no action
+            // Flag to board that the table is currently being destroyed - no action
             // should be taken
             settings.bDestroying = true;
 
@@ -9836,7 +9836,7 @@
 
 
     /*
-	 * Developer note: The properties of the object below are given in Hungarian
+	 * Developer board: The properties of the object below are given in Hungarian
 	 * notation, that was used as the interface for DataTables prior to v1.10, however
 	 * from v1.10 onwards the primary interface is camel case. In order to avoid
 	 * breaking backwards compatibility utterly with this change, the Hungarian
@@ -10079,7 +10079,7 @@
          *
          * @example
          *   // Manipulate the data returned from the server - add a link to data
-         *   // (note this can, should, be done using `render` for the column - this
+         *   // (board this can, should, be done using `render` for the column - this
          *   // is just a simple example of how the data can be manipulated).
          *   $('#example').dataTable( {
          *     "ajax": {
@@ -10694,7 +10694,7 @@
          *  @name DataTable.defaults.formatNumber
          *
          *  @example
-         *    // Format a number using a single quote for the separator (note that
+         *    // Format a number using a single quote for the separator (board that
          *    // this can also be done with the language.thousands setting)
          *    $(document).ready( function() {
          *      $('#example').dataTable( {
@@ -12022,7 +12022,7 @@
 
 
     /*
-	 * Developer note - See note in model.defaults.js about the use of Hungarian
+	 * Developer board - See board in model.defaults.js about the use of Hungarian
 	 * notation and camel case.
 	 */
 
@@ -13997,7 +13997,7 @@
         /**
          * Internal functions, exposed for used in plug-ins.
          *
-         * Please note that you should not need to use the internal methods for
+         * Please board that you should not need to use the internal methods for
          * anything other than a plug-in (and even then, try to avoid if possible).
          * The internal function may change between releases.
          *
@@ -14789,7 +14789,7 @@
         header: {
             _: function ( settings, cell, column, classes ) {
                 // No additional mark-up required
-                // Attach a sort listener to update on sort - note that using the
+                // Attach a sort listener to update on sort - board that using the
                 // `DT` namespace will allow the event to be removed automatically
                 // on destroy, while the `dt` namespaced event is the one we are
                 // listening for

@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="assets/css/royal-preload.css"/>
     <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css"/>
     <link rel="stylesheet" href="assets/vendor/dropify/css/dropify.min.css"/>
-    <link rel="stylesheet" href="assets/css/lightgallery.css"/>
     <link rel="stylesheet" href="assets/gallery/css/vendor/font-awesome.min.css">
 
 
@@ -39,7 +38,21 @@ $level = Model::getUserLevel();
 $name = Model::getUserName();
 ?>
 
+<style>
 
+    @font-face {
+        font-family: Sarbaz;
+        font-style: normal;
+        font-weight: bold;
+        src: url('assets/fonts/eot/SarPink.eot');
+        src: url('assets/fonts/eot/SarPink.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('assets/fonts/woff2/SarPink.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('assets/fonts/woff/SarPink.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('assets/fonts/ttf/SarPink.ttf') format('truetype');
+    }
+
+    a,span,ul,li,h1,h2,h3,h4,h5,h6{
+        font-family: IRANSans !important;
+    }
+
+</style>
 
 <body style="background: #fff;">
 

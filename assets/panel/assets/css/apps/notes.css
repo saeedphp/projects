@@ -46,7 +46,7 @@
     font-size: 15px;
     color: #bfc9d4;
     letter-spacing: 1px;
-    margin-top: 25px;
+    margin-top: 0px;
     margin-bottom: 13px;
     padding: 9px 20px; }
 .group-section svg {
@@ -198,14 +198,7 @@
     border-radius: 6px;
     display: inline-flex;
     background: rgba(85, 85, 85, 0.333333); }
-.note-container.note-grid .note-item.note-personal {
-    background: rgba(0, 150, 136, 0.28); }
-.note-container.note-grid .note-item.note-work {
-    background: rgba(226, 160, 63, 0.42); }
-.note-container.note-grid .note-item.note-important {
-    background: rgba(231, 80, 90, 0.38); }
-.note-container.note-grid .note-item.note-social {
-    background: rgba(92, 26, 195, 0.26); }
+
 .note-container.note-grid .note-item .note-inner-content {
     border-radius: 4px;
     width: 100%;

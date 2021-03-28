@@ -15,7 +15,7 @@ class model_adminprogress extends Model{
          * ps == tbl_status
          * */
 
-        $sql='SELECT p.*,pT.title AS projectType,ps.title AS statusTitle
+        $sql='SELECT p.*,pt.title AS projectType,ps.title AS statusTitle
               FROM tbl_progress p
               LEFT JOIN tbl_project pt ON p.type=pt.id
               LEFT JOIN tbl_status ps ON p.status=ps.id
@@ -97,7 +97,7 @@ class model_adminprogress extends Model{
          * ps == tbl_status
          * */
 
-        $sql='SELECT p.*,pT.title AS projectType,ps.title AS statusTitle
+        $sql='SELECT p.*,pt.title AS projectType,ps.title AS statusTitle
               FROM tbl_progress p
               LEFT JOIN tbl_project pt ON p.type=pt.id
               LEFT JOIN tbl_status ps ON p.status=ps.id

@@ -14962,7 +14962,8 @@ a:hover {
 }
 
 .home-section-analyzed-text {
-    padding-left: 30px;
+    padding-right: 30px;
+    text-align: right;
 }
 
 .clear:after {
@@ -15018,6 +15019,10 @@ a:hover {
     .main-title {
         margin-bottom: 50px
     }
+    
+    .home-section-logo-garden-wrapper, .home-section-analyzed-text {
+    display: table-header-group;
+}
 
     .footer-row {
         display: flex;
