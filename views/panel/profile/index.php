@@ -58,12 +58,6 @@ $userInfo = $data['userInfo'];
     </tr>
     </tbody>
 </table>
-
-<div>
-    <a class="btn-edit" href="profile/editprofile">ویرایش پروفایل</a>
-    <a class="btn-edit" href="profile/changepass">تغییر رمز عبور</a>
-</div>
-
 <div class="profile">
     <ul class="mb-0">
         <li class="profile-item">
@@ -72,33 +66,35 @@ $userInfo = $data['userInfo'];
         </li>
         <li class="profile-item">
             <div class="title">پست الکترونیک :</div>
-            <div class="value"><?= $userInfo['email']; ?></div>
-        </li>
-        <li class="profile-item">
-            <div class="title">نام کاربری:</div>
             <div class="value">
-                <?= $userInfo['username']; ?>
+                <a href="mailto:<?= $userInfo['email']; ?>">
+                    <?= $userInfo['email']; ?>
+                </a>
             </div>
         </li>
         <li class="profile-item">
             <div class="title">شماره تلفن همراه:</div>
             <div class="value">
-                <?= $userInfo['mobile']; ?>
+                <a href="tel:<?= $userInfo['mobile']; ?>">
+                    <?= $userInfo['mobile']; ?>
+                </a>
             </div>
         </li>
         <li class="profile-item">
-            <div class="title"> تاریخ عضویت :</div>
-            <div class="value">
-                <?= $userInfo['date']; ?>
-            </div>
+            <div class="title">تاریخ عضویت:</div>
+            <div class="value"><?= $userInfo['date']; ?></div>
         </li>
         <li class="profile-item">
             <div class="title"> زمان عضویت :</div>
-            <div class="value">
-                <?= $userInfo['time']; ?>
-            </div>
+            <div class="value"><?= $userInfo['time']; ?></div>
         </li>
     </ul>
+</div>
+<div class="profile-edit-action">
+    <a href="profile/editprofile" class="link-spoiler-edit btn btn-secondary">ویرایش پروفایل</a>
+    <a href="profile/changepass" class="link-spoiler-edit btn btn-secondary">تغییر رمز عبور</a>
+</div>
+<div class="btn-row">
 
 </div>
 

@@ -182,6 +182,33 @@ class model_adminprogress extends Model{
 
     }
 
+    function getVideo($projectId){
+
+        $sql='SELECT * FROM tbl_video WHERE projectId=? ORDER BY id DESC ';
+        $res=$this->doSelect($sql,[$projectId]);
+        return $res;
+
+    }
+
+    function addVideo($data,$projectId){
+
+        $title=$data['title'];
+        $src=$data['src'];
+
+        $sql='INSERT INTO tbl_video (src,title,projectId) VALUES (?,?,?)';
+        $params=[$src,$title,$projectId];
+        $this->doQuery($sql,$params);
+
+    }
+
+    function deleteVideo($ids){
+
+        $ids=join(',',$ids);
+        $sql='DELETE FROM tbl_video WHERE id IN ('.$ids.')';
+        $this->doQuery($sql);
+
+    }
+
 }
 
 ?>

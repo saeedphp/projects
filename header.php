@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/css/slick-theme.css"/>
     <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
     <link rel="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/responsive.css"/>
+    <link rel="stylesheet" href="assets/css/materialdesignicons.css"/>
     <link rel="stylesheet" href="assets/css/royal-preload.css"/>
     <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css"/>
     <link rel="stylesheet" href="assets/vendor/dropify/css/dropify.min.css"/>
@@ -36,6 +38,7 @@
 $userId = Model::sessionGet('userId');
 $level = Model::getUserLevel();
 $name = Model::getUserName();
+$menu=Model::getMenu();
 ?>
 
 <style>
@@ -49,7 +52,7 @@ $name = Model::getUserName();
     }
 
     a,span,ul,li,h1,h2,h3,h4,h5,h6{
-        font-family: IRANSans !important;
+        font-family: Sarbaz !important;
     }
 
 </style>
@@ -75,26 +78,14 @@ $name = Model::getUserName();
                             <div class="octf-col">
                                 <nav id="site-navigation" class="main-navigation">
                                     <ul id="primary-menu" class="menu" style="display: flex;">
+                                        <?php
+                                        foreach ($menu as $row){ ?>
                                         <li>
-                                            <a href="">
-                                                صفحه اصلی
+                                            <a href="<?= $row['link']; ?>">
+                                                <?= $row['title']; ?>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="form">
-                                                فرم نیازسنجی
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="estimate">
-                                                براورد هزینه
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="portfolio">
-                                                نمونه کارها
-                                            </a>
-                                        </li>
+                                        <?php } ?>
                                     </ul>
                                 </nav><!-- #site-navigation -->
                             </div>
@@ -170,6 +161,51 @@ $name = Model::getUserName();
                             <noscript><img src="assets/images/logo-dark.svg" alt="Onum"></noscript>
                         </a>
                     </div>
+                    <div class="octf-col text-right">
+                        <!-- Call To Action -->
+                        <div class="octf-btn-cta">
+
+                            <div class="octf-header-module">
+
+                                <!-- Form Search on Header -->
+                                <div class="account-box">
+                                    <div class="nav-account d-block pl">
+                                            <span class="icon-account">
+                                                <img src="assets/images/man.png" class="avator">
+                                            </span>
+                                        <div class="dropdown-menu">
+                                            <ul class="account-uls mb-0">
+                                                <?php
+                                                if ($userId==false){ ?>
+
+                                                    <li class="account-item">
+                                                        <a href="register" class="account-link">ثبت نام</a>
+                                                    </li>
+                                                    <li class="account-item">
+                                                        <a href="login" class="account-link">ورود</a>
+                                                    </li>
+
+                                                <?php }else{ ?>
+
+                                                    <li class="account-item">
+                                                        <a href="profile" class="account-link">پروفایل</a>
+                                                    </li>
+                                                    <li class="account-item">
+                                                        <a href="<?= URL ?>admindashboard/logout" class="account-link">خروج</a>
+                                                    </li>
+
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="octf-header-module">
+
+                            </div>
+                        </div>
+                    </div>
                     <div class="octf-btn-cta">
                         <div class="octf-header-module cart-btn-hover">
 
@@ -182,26 +218,14 @@ $name = Model::getUserName();
                 <div class="mmenu_wrapper">
                     <div class="mobile_nav">
                         <ul style="display: flex;flex-direction: column;" id="menu-main-menu" class="mobile_mainmenu">
-                            <li>
-                                <a href="">
-                                    صفحه اصلی
-                                </a>
-                            </li>
-                            <li>
-                                <a href="form">
-                                    فرم نیازسنجی
-                                </a>
-                            </li>
-                            <li>
-                                <a href="estimate">
-                                    براورد هزینه
-                                </a>
-                            </li>
-                            <li>
-                                <a href="portfolio">
-                                    نمونه کارها
-                                </a>
-                            </li>
+                            <?php
+                            foreach ($menu as $row){ ?>
+                                <li>
+                                    <a href="<?= $row['link']; ?>">
+                                        <?= $row['title']; ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>

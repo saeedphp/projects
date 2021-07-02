@@ -27,7 +27,13 @@ if (sizeof($projectInfo)>0){ ?>
                 <td class="w-50">
                     <div class="title">نوع پروژه :</div>
                     <div class="value">
-                        <?= $row['projectType']; ?>
+                        <?php
+                        if ($row['projectType']!=''){
+                            echo $row['projectType'];
+                        }else{
+                            echo 'مشخص نشده';
+                        }
+                        ?>
                     </div>
                 </td>
             </tr>
@@ -68,7 +74,13 @@ if (sizeof($projectInfo)>0){ ?>
                 <td class="w-50">
                     <div class="title">تاریخ تحویل :</div>
                     <div class="value">
-                        <?= $row['deadline']; ?>
+                        <?php
+                        if ($row['deadline']!=''){
+                            echo $row['deadline'];
+                        }else{
+                            echo 'مشخص نشده';
+                        }
+                        ?>
                     </div>
                 </td>
                 <td class="w-50">
@@ -78,26 +90,23 @@ if (sizeof($projectInfo)>0){ ?>
                         $date1 = $date = date('Y/m/d');
                         $date_jalali = Model::gregorianToJalali($date, '/');;
                         $date2 = $row['deadline'];
-                        $days = (strtotime($date2) - strtotime($date_jalali)) / (60 * 60 * 24);
+                        if ($date2!=''){
+                            $days = (strtotime($date2) - strtotime($date_jalali)) / (60 * 60 * 24);
+                        }else{
+                            $days='تاریخ تحویل هنوز مشخص نشده است!';
+                        }
                         ?>
-                        <span class="shadow-none <?php if ($days < 10) {
-                            echo 'force';
-                        } elseif ($days >= 10 && $days < 20) {
-                            echo 'near';
-                        } elseif ($days >= 20 && $days < 40) {
-                            echo
-                            'normal';
-                        } elseif ($days >= 40) {
-                            echo 'deadline';
-                        } ?>">
-                                                    <?php
-                                                    if ($days > 0) {
-                                                        echo $days . 'روز';
-                                                    } else {
-                                                        echo 'تمام شد';
-                                                    }
-                                                    ?>
-                                                </span>
+                        <span>
+                            <?php
+                            if ($days > 0){
+                                echo $days . 'روز';
+                            } elseif ($days < 0){
+                                echo 'تمام شد';
+                            }else{
+                                echo 'تاریخ تحویل هنوز مشخص نشده است!';
+                            }
+                            ?>
+                        </span>
                     </div>
                 </td>
             </tr>
@@ -107,7 +116,7 @@ if (sizeof($projectInfo)>0){ ?>
                     <div class="value">
                         <a href="sketch/index/<?= $row['id']; ?>">
                         <span>
-                            <i class="fa fa-eye"></i>
+                            <i class="mdi mdi-eye"></i>
                         </span>
                         </a>
                     </div>
@@ -117,7 +126,7 @@ if (sizeof($projectInfo)>0){ ?>
                     <div class="value">
                         <a href="tech/index/<?= $row['id']; ?>">
                         <span>
-                            <i class="fa fa-eye"></i>
+                            <i class="mdi mdi-eye"></i>
                         </span>
                         </a>
                     </div>
@@ -126,6 +135,110 @@ if (sizeof($projectInfo)>0){ ?>
 
             </tbody>
         </table>
+
+        <div class="profile">
+            <ul class="mb-0">
+                <li class="profile-item">
+                    <div class="title">نام پروژه:</div>
+                    <div class="value"><?= $row['title']; ?></div>
+                </li>
+                <li class="profile-item">
+                    <div class="title">نوع پروژه :</div>
+                    <div class="value">
+                        <?php
+                        if ($row['projectType']!=''){
+                            echo $row['projectType'];
+                        }else{
+                            echo 'مشخص نشده';
+                        }
+                        ?>
+                    </div>
+                </li>
+                <li class="profile-item">
+                    <div class="title">وضعیت فعلی پروژه:</div>
+                    <div class="value">
+                        <span class="shadow-none needs <?php if ($row['status'] == 1) {
+                            echo 'needs';
+                        } elseif ($row['status'] == 2) {
+                            echo 'theme';
+                        } elseif ($row['status'] == 3) {
+                            echo 'UIUX';
+                        } elseif ($row['status'] == 4) {
+                            echo 'dynamic';
+                        } elseif ($row['status'] == 5) {
+                            echo 'check';
+                        } elseif ($row['status'] == 6) {
+                            echo 'finaltest';
+                        } elseif ($row['status'] == 7) {
+                            echo
+                            'completed';
+                        } ?>"><?= $row['statusTitle'] ?></span>
+                    </div>
+                </li>
+                <li class="profile-item">
+                    <div class="title">تاریخ ایجاد پروژه:</div>
+                    <div class="value"><?= $row['date']; ?></div>
+                </li>
+                <li class="profile-item">
+                    <div class="title"> تاریخ تحویل :</div>
+                    <div class="value">
+                        <?php
+                        if ($row['deadline']!=''){
+                            echo $row['deadline'];
+                        }else{
+                            echo 'مشخص نشده';
+                        }
+                        ?>
+                    </div>
+                </li>
+                <li class="profile-item">
+                    <div class="title"> تعداد روزهای باقیمانده : :</div>
+                    <div class="value">
+                        <?php
+                        $date1 = $date = date('Y/m/d');
+                        $date_jalali = Model::gregorianToJalali($date, '/');;
+                        $date2 = $row['deadline'];
+                        if ($date2!=''){
+                            $days = (strtotime($date2) - strtotime($date_jalali)) / (60 * 60 * 24);
+                        }else{
+                            $days='تاریخ تحویل هنوز مشخص نشده است!';
+                        }
+                        ?>
+                        <span>
+                            <?php
+                            if ($days > 0){
+                                echo $days . 'روز';
+                            } elseif ($days < 0){
+                                echo 'تمام شد';
+                            }else{
+                                echo 'تاریخ تحویل هنوز مشخص نشده است!';
+                            }
+                            ?>
+                        </span>
+                    </div>
+                </li>
+                <li class="profile-item">
+                    <div class="title"> مشاهده اسکچ پروژه های من :</div>
+                    <div class="value">
+                        <a href="sketch/index/<?= $row['id']; ?>">
+                        <span>
+                            <i class="mdi mdi-eye"></i>
+                        </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="profile-item">
+                    <div class="title"> تکنولوژی های پروژه من:</div>
+                    <div class="value">
+                        <a href="tech/index/<?= $row['id']; ?>">
+                        <span>
+                            <i class="mdi mdi-eye"></i>
+                        </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     <?php } ?>
 
     <?php

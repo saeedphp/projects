@@ -6,7 +6,8 @@ $board=$data['board'];
 $boardType=$data['boardType'];
 ?>
 
-
+<link href="assets/panel/assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
+<script src="assets/panel/assets/js/apps/notes.js"></script>
     <!-- BEGIN BOARD COLOR STYLE -->
 
 <style>

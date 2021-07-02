@@ -41,15 +41,12 @@ require('views/admin/layout.php');
                                     </div>
                                 </div>
 
-                                <a class="btn" id="addTask" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> وظیفه جدید</a>
+                                <button class="btn" data-toggle="modal" data-target="#addTaskModal" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> وظیفه جدید</button>
                             </div>
                         </div>
 
                         <div id="todo-inbox" class="accordion todo-inbox">
-                            <div class="search">
-                                <input type="text" class="form-control input-search" placeholder="در اینجا جستجو کنید...">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu mail-menu d-lg-none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            </div>
+
 
                             <div class="todo-box">
 
@@ -693,13 +690,7 @@ require('views/admin/layout.php');
             </div>
 
         </div>
-        <div class="footer-wrapper">
-            <div class="footer-section f-section-1">
-                <p class=""> © کپی رایت</p>
-            </div>
-            <div class="footer-section f-section-2">
-                <span class="copyright"> بومی سازی شده توسط : <a href="https://imanpa.ir/store/"> ایمان پاکروح </a> </span></div>
-        </div>
+
     </div>
     <!--  END CONTENT AREA  -->
 <div id="output"></div>

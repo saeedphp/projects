@@ -125,6 +125,31 @@ class adminprogress extends Controller{
 
     }
 
+    function video($progressId=''){
+
+        if (isset($_POST['title'])){
+            $this->model->addVideo($_POST,$progressId);
+        }
+
+        $video=$this->model->getVideo($progressId);
+        $progressInfo=$this->model->progressInfo($progressId);
+
+        $data=[
+            'video'=>$video,
+            'progressInfo'=>$progressInfo
+        ];
+
+        $this->view('admin/progress/video',$data,1,1);
+
+    }
+
+    function deletegallery($projectId){
+
+        $this->model->deleteVideo($_POST['id']);
+        header('location:'.URL.'adminprogress/video/'.$projectId);
+
+    }
+
 }
 
 ?>

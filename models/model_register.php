@@ -37,7 +37,7 @@ class model_register extends Model{
             $error='شما قبلا ثبت نام کرده اید!';
         }
 
-        header('location:'.URL.'register?error='.$error);
+        header('location:'.URL.'profile');
 
     }
 

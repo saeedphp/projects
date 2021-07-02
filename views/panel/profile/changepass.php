@@ -1,7 +1,6 @@
 <?php
-$active = 'profile';
+$active = 'changepass';
 require('views/panel/index.php');
-$userInfo = $data['userInfo'];
 ?>
 
 
@@ -34,9 +33,9 @@ $userInfo = $data['userInfo'];
                 <label>
                     رمز عبور فعلی
                 </label>
-                <span class="wpcf7-form-control-wrap your-name">
-                                    <input type="password" name="password_old" class="wpcf7-form-control wpcf7-text"
-                                           value="<?= @$userInfo['name']; ?>">
+                <span class="wpcf7-form-control-wrap your-name form-card">
+                    <i onclick="showpass(this,1)" class="mdi mdi-eye"></i>
+                                    <input type="password" id="old-pass" name="password_old" class="wpcf7-form-control wpcf7-text">
                                 </span>
             </p>
 
@@ -44,9 +43,9 @@ $userInfo = $data['userInfo'];
                 <label>
                     رمز عبور جدید
                 </label>
-                <span class="wpcf7-form-control-wrap your-name">
-                                    <input name="password_new" type="password" class="wpcf7-form-control wpcf7-text"
-                                           value="<?= @$userInfo['email']; ?>">
+                <span class="wpcf7-form-control-wrap your-name form-card">
+                    <i onclick="showpass(this,2)" class="mdi mdi-eye"></i>
+                                    <input name="password_new" id="password" type="password" class="wpcf7-form-control wpcf7-text">
                                 </span>
             </p>
 
@@ -54,9 +53,9 @@ $userInfo = $data['userInfo'];
                 <label>
                     تکرار رمز عبور جدید
                 </label>
-                <span class="wpcf7-form-control-wrap your-name">
-                                    <input type="password" name="password_confirm" class="wpcf7-form-control wpcf7-text"
-                                           value="<?= @$userInfo['mobile']; ?>">
+                <span class="wpcf7-form-control-wrap your-name form-card">
+                    <i onclick="showpass(this,3)" class="mdi mdi-eye"></i>
+                                    <input type="password" name="password_confirm" id="repeat" class="wpcf7-form-control wpcf7-text">
                                 </span>
             </p>
 
@@ -84,3 +83,58 @@ $userInfo = $data['userInfo'];
 </section>
 
 </div>
+
+<script>
+
+    function showpass(tag,id) {
+
+        var imgTag = $(tag);
+        var eye = imgTag.attr('class');
+        if (eye == 'mdi mdi-eye') {
+            imgTag.attr('class','mdi mdi-eye-off');
+        } else {
+            imgTag.attr('class','mdi mdi-eye');
+        }
+
+        var x=0;
+
+        switch (id) {
+            case 1:
+                x = 1;
+                var x=
+                    document.getElementById("old-pass");
+                if (x.type==='password'){
+                    x.type="text";
+                }else {
+                    x.type="password";
+                }
+                break;
+            case 2:
+                x = 2;
+                var x=
+                    document.getElementById("password");
+                if (x.type==='password'){
+                    x.type="text";
+                }else {
+                    x.type="password";
+                }
+                break;
+            case 3:
+                x = 3;
+                var x=
+                    document.getElementById("repeat");
+                if (x.type==='password'){
+                    x.type="text";
+                }else {
+                    x.type="password";
+                }
+                break;
+            case 3:
+                x = 3;
+                myFunction1(x);
+                break;
+        }
+
+    }
+
+</script>

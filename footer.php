@@ -170,4 +170,18 @@ $link=Model::link();
 <script src="assets/assets/js/pages/forms/advanced-form-elements.js"></script>
 <script src="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
+<script>
+    /*remove white space in textarea tag*/
+
+    $('document').ready(function()
+    {
+        $('textarea').each(function(){
+                $(this).val($(this).val().trim());
+            }
+        );
+    });
+
+    /*remove white space in textarea tag*/
+</script>
+
 

@@ -553,7 +553,7 @@ blockquote cite {
     font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     color: #a5b7d2;
 }
 
@@ -2103,6 +2103,7 @@ ul,
 ol {
     margin: 0 0 20px;
     padding-left: 18px;
+    padding-right: 18px;
 }
 
 ul {
@@ -2160,12 +2161,6 @@ th {
     text-align: left;
 }
 
-table,
-th,
-td {
-    border: 1px solid #eee;
-}
-
 th {
     font-weight: 700;
 }
@@ -2204,7 +2199,7 @@ td {
     box-sizing: border-box;
     color: #fff;
     position: relative;
-    font-family: "Red Hat Display", sans-serif;
+    font-family: inherit;
     overflow: hidden;
     border-radius: 25px;
     -webkit-border-radius: 25px;
@@ -2414,7 +2409,7 @@ td {
     text-decoration: none;
     white-space: nowrap;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     text-transform: uppercase;
 }
 
@@ -2521,6 +2516,7 @@ textarea {
     width: 100%;
     padding: 15px 20px;
     vertical-align: top;
+    font-family: inherit;
 }
 
 ::-webkit-input-placeholder {
@@ -3059,15 +3055,7 @@ a:hover, a:active {
 .main-navigation > ul > li.current-menu-item:before,
 .main-navigation > ul > li.current-menu-ancestor:before {
     left: 50%;
-    width: 50%;
-}
-
-.main-navigation > ul > li:hover:after,
-.main-navigation > ul > li.current-menu-item:after,
-.main-navigation > ul > li.current-menu-ancestor:after {
-    left: auto;
-    right: 50%;
-    width: 50%;
+    width: 100%;
 }
 
 .main-navigation ul ul {
@@ -4052,7 +4040,7 @@ a:hover, a:active {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     line-height: 1;
     display: inline-block;
     color: #fff;
@@ -4188,7 +4176,7 @@ a:hover, a:active {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     color: #a5b7d2;
 }
 
@@ -4508,7 +4496,7 @@ a:hover, a:active {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 
 .post-nav a span {
@@ -4916,6 +4904,10 @@ a:hover, a:active {
 
     .related-posts {
         margin-top: 40px;
+    }
+    .btn-edit{
+        margin: 0 2px !important;
+        font-size: 1.2rem;
     }
 }
 
@@ -5660,7 +5652,7 @@ object {
     position: relative;
     display: inline-block;
     padding-left: 21px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
@@ -7339,7 +7331,7 @@ object {
     margin-top: 13px;
     margin-bottom: 0;
     padding-left: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     display: inline-block;
     position: relative;
 }
@@ -8053,6 +8045,7 @@ input:checked + .slider:before {
 
 .wpcf7 input.wpcf7-text, .form-contact .wpcf7-form input {
     width: 100%;
+    font-family: inherit;
 }
 
 .wpcf7 textarea {
@@ -8305,7 +8298,7 @@ div .custom.tp-bullets .tp-bullet.selected:after {
 div .custom .tp-bullet:before {
     counter-increment: section;
     content: "0" counter(section) " ";
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 
 div .custom .tp-bullet:after {
@@ -8662,7 +8655,7 @@ div.elementor-widget-wrap > .elementor-element.btn-inline {
 .project_filters li a {
     position: relative;
     display: inline-block;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     font-family: "Red Hat Display", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -8681,6 +8674,7 @@ div.elementor-widget-wrap > .elementor-element.btn-inline {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .project_filters li a:hover, .project_filters li a.selected {
@@ -9276,7 +9270,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
     font-size: 16px;
     font-weight: 700;
     line-height: 72px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     font-family: "Red Hat Display", sans-serif;
 }
 
@@ -9834,7 +9828,7 @@ div.tp-bullets {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     font-family: "Red Hat Display", sans-serif;
     line-height: 1;
     margin-bottom: 24px;
@@ -12238,7 +12232,7 @@ div.tp-bullets {
     color: #636363;
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     display: block;
 }
 
@@ -12282,6 +12276,7 @@ div.tp-bullets {
 .ot-counter.s3 h6 {
     color: #1a1b1e;
     padding-left: 0;
+    letter-spacing: 0;
 }
 
 .ot-counter.s3 h6:before {
@@ -13930,31 +13925,6 @@ div.tp-bullets {
     }
 }
 
-input {
-    font-family: Dana !important;
-}
-
-label {
-    font-family: Dana !important;
-    color: #000
-}
-
-textarea {
-    font-family: Dana !important;
-}
-
-select, option {
-    font-family: Dana !important;
-}
-
-small {
-    font-family: Dana !important;
-}
-
-h1, h2, h3, h4, h, h6 {
-    font-family: Dana !important;
-}
-
 .social-label {
     vertical-align: top
 }
@@ -14177,6 +14147,10 @@ p.success {
 .post-item-profile .profile-content .profile-stats .profile-edit-action a.link-spoiler-edit {
     border-radius: 20px;
     font-size: 12px;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    padding: 0.375rem 0.75rem;
 }
 
 .post-item-profile .profile-content .profile-stats .table-orders table .thead-light th {
@@ -14391,6 +14365,7 @@ p.success {
     display: block;
     text-align: center;
     margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 .post-item-profile .profile-content .profile-stats .profile ul li.profile-item .title {
@@ -14738,12 +14713,20 @@ p.success {
 
 /* profile------------------------*/
 
-.table-nedds-form tr td {
+.table-needs-form tr td {
     white-space: normal !important;
     max-width: 50%;
     width: 50%;
     text-align: right;
 }
+
+.table-needs-form tr{
+    border-bottom: 1px solid #eee;
+}
+.table-needs-form tr td{
+    padding: 1.4375em;
+}
+
 
 .phone-number {
     text-align: left;
@@ -14863,6 +14846,18 @@ p.success {
     transition: all 0.1s ease-in;
     opacity: 0.01;
     visibility: hidden;
+}
+@media (max-width:768px){
+    .account-box .dropdown-menu{
+        left: unset !important;
+        right: 15px;
+    }
+    .account-box span.icon-account{
+        width: auto !important;
+        height: auto !important;
+        top: -5px;
+        transform: scale(.8);
+    }
 }
 
 .account-box .nav-account:hover .dropdown-menu {
@@ -15036,4 +15031,57 @@ a:hover {
     }
 }
 
+ table tr th{
+    color: #000 ;
+    text-align: center;
+}
+
+ table tr td{
+    color: #bbb !important;
+    text-align: center !important;
+}
+
+ .ticket-sub{
+     width: 100%;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 8px #ccc;
+     padding: 15px 10px;
+     margin-bottom: 3rem;
+     margin-top: 1rem;
+ }
+ .sketch-row{
+     display: flex;
+     justify-content: center;
+     text-align: center;
+ }
+ video{
+     width: 100%;
+ }
+ .txt-video-title{
+     text-align: center;
+     margin: 10px 0;
+ }
+ .row-video{
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .account-box .profile-txt:hover .dropdown-menu{
+     transition: all 0.1s ease-in;
+     opacity: 1;
+     visibility: visible;
+ }
+ label{
+     color: #bbb !important;
+ }
+ .form-card{
+     position: relative;
+ }
+ .form-card i{
+     position: absolute;
+     top: 3.6rem;
+     left: 3rem;
+     cursor: pointer;
+ }
 /*# sourceMappingURL=style.css.map */

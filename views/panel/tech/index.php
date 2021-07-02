@@ -2,6 +2,7 @@
 $active = 'status';
 require('views/panel/index.php');
 $tech=$data['tech'];
+$all_techs=$tech['all_techs'];
 ?>
 
 <style>
@@ -118,24 +119,42 @@ $tech=$data['tech'];
     </span>
 </div>
 
-<div class="flex-row justify-content-center">
-    <div class="row col-12 row-margin" style="width: 100%;">
-        <?php
-        $all_techs=$tech['all_techs'];
-        foreach ($all_techs as $row){ ?>
-        <div class="col-md-6 col-sm-6 col-xs-12 sm-m-b40 marginBottom">
-            <div class="service-box-s2 s-box <?= $row['background']; ?>">
-                <div class="number-box <?= $row['box']; ?>"><i class="<?= $row['icon']; ?>"></i></div>
-                <div class="content-box">
-                    <h5>
-                        <?= $row['title']; ?>
-                    </h5>
+<?php
+if (sizeof($all_techs)>0){ ?>
+
+    <div class="flex-row justify-content-center">
+        <div class="row col-12 row-margin" style="width: 100%;">
+            <?php
+
+            foreach ($all_techs as $row){ ?>
+                <div class="col-md-6 col-sm-6 col-xs-12 sm-m-b40 marginBottom">
+                    <div class="service-box-s2 s-box <?= $row['background']; ?>">
+                        <div class="number-box <?= $row['box']; ?>"><i class="<?= $row['icon']; ?>"></i></div>
+                        <div class="content-box">
+                            <h5>
+                                <?= $row['title']; ?>
+                            </h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
-        <?php } ?>
     </div>
-</div>
+
+<?php }else{ ?>
+
+    <div class="row row-empty" id="lightgallery">
+        <div class="">
+            <div class="ot-heading text-center">
+                <h2 class="main-heading">تکنولوژی های پروژه شما فعلا مشخص نیست</h2>
+            </div>
+            <a>
+                <img src="assets/images/coding-language.png">
+            </a>
+        </div>
+    </div>
+
+<?php } ?>
 
 
 </div>

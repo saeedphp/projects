@@ -58,8 +58,7 @@ class model_adminproject extends Model{
 
         $ids=join(',',$ids);
         $sql='UPDATE tbl_project SET archive=? WHERE id IN ('.$ids.')';
-        $res=$this->doQuery($sql,[1]);
-        $this->doQuery($res);
+        $this->doQuery($sql,[1]);
 
     }
 
@@ -67,8 +66,7 @@ class model_adminproject extends Model{
 
         $ids=join(',',$ids);
         $sql='UPDATE tbl_project SET archive=? WHERE id IN ('.$ids.')';
-        $res=$this->doQuery($sql,[0]);
-        $this->doQuery($res);
+        $this->doQuery($sql,[0]);
 
     }
 
@@ -76,8 +74,7 @@ class model_adminproject extends Model{
 
         $ids=join(',',$ids);
         $sql='DELETE FROM tbl_project WHERE id IN ('.$ids.')';
-        $res=$this->doQuery($sql);
-        $this->doQuery($res);
+        $this->doQuery($sql);
 
     }
 

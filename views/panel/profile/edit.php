@@ -1,5 +1,5 @@
 <?php
-$active = 'profile';
+$active = 'editprofile';
 require('views/panel/index.php');
 $userInfo = $data['userInfo'];
 ?>

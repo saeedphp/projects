@@ -22,7 +22,7 @@ $result .= substr($mobile, 7, 4);
 
     <div class="container-main">
         <div class="col-12">
-            <section class="profile-home p-t110 z-index-1 section-contact bg-white particles-js"
+            <section class="profile-home p-t110 z-index-1 section-contact particles-js"
                      data-color="#fe4c1c,#00c3ff,#0160e7"
                      data-id="a1">
                 <div class="container col-lg">
@@ -54,24 +54,52 @@ $result .= substr($mobile, 7, 4);
                                         <li class="profile-account-nav-item navigation-link-dashboard">
                                             <a href="profile" class="<?php if ($active == 'profile') {
                                                 echo 'active';
-                                            } ?>"><i class="fa fa-user"></i>
+                                            } ?>"><i class="mdi mdi-account"></i>
                                                 پروفایل
+                                            </a>
+                                        </li>
+                                        <li class="profile-account-nav-item navigation-link-dashboard">
+                                            <a href="profile/editprofile" class="<?php if ($active == 'editprofile') {
+                                                echo 'active';
+                                            } ?>"><i class="mdi mdi-account-edit"></i>
+                                                ویرایش اطلاعات کاربری
+                                            </a>
+                                        </li>
+                                        <li class="profile-account-nav-item navigation-link-dashboard">
+                                            <a href="profile/changepass" class="<?php if ($active == 'changepass') {
+                                                echo 'active';
+                                            } ?>"><i class="mdi mdi-account-key"></i>
+                                                تغییر رمز عبور
                                             </a>
                                         </li>
                                         <li class="profile-account-nav-item navigation-link-dashboard">
                                             <a href="myform" class="<?php if ($active == 'myform') {
                                                 echo 'active';
-                                            } ?>"><i class="fa fa-folder-open"></i>
+                                            } ?>"><i class="mdi mdi-folder"></i>
                                                 فرم نیاز سنجی من
                                             </a>
                                         </li>
                                         <li class="profile-account-nav-item navigation-link-dashboard">
                                             <a href="status" class="<?php if ($active == 'status') {
                                                 echo 'active';
-                                            } ?>"><i class="fa fa-chart-area"></i>
+                                            } ?>"><i class="mdi mdi-chart-areaspline"></i>
                                                 وضعیت پروژه ی من
                                             </a>
                                         </li>
+                                        <li class="profile-account-nav-item navigation-link-dashboard">
+                                            <a href="video" class="<?php if ($active == 'video') {
+                                                echo 'active';
+                                            } ?>"><i class="mdi mdi-video-image"></i>
+                                                ویدیو های آموزشی
+                                            </a>
+                                        </li>
+                                        <!--<li class="profile-account-nav-item navigation-link-dashboard">
+                                            <a href="ticket" class="<?php /*if ($active == 'ticket') {
+                                                echo 'active';
+                                            } */?>"><i class="fa fa-support"></i>
+                                                تیکت
+                                            </a>
+                                        </li>-->
 
                                     </ul>
                                 </section>

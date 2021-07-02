@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="faramouj-projects" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-    <TestRunner directory="$PROJECT_DIR$" />
+    <TestRunner directory="$PROJECT_DIR$" scope="Pattern" />
     <method v="2" />
   </configuration>
 </component>

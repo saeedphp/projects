@@ -14,15 +14,31 @@ class Myform extends Controller{
         }
     }
 
-    function index(){
+    function index($id=''){
 
         $form=$this->model->getForm();
+        $social=$this->model->getSocial();
+        $formInfo=$this->model->formInfo($id);
 
         $data=[
-            'form'=>$form
+            'form'=>$form,
+            'social'=>$social,
+            'formInfo'=>$formInfo
         ];
 
         $this->view('panel/myform/index',$data);
+
+    }
+
+    function form($id){
+
+        $formInfo=$this->model->formInfo($id);
+
+        $data=[
+            'formInfo'=>$formInfo
+        ];
+
+        $this->view('panel/myform/form',$data);
 
     }
 

@@ -51,8 +51,8 @@ foreach ($redirect as $row){ ?>
     require ('meta.php');
     ?>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png"/>
-    <link href="assets/panel/assets/css/loader.css" rel="stylesheet" type="text/css"/>
-    <script src="assets/panel/assets/js/loader.js"></script>
+    <!--<link href="assets/panel/assets/css/loader.css" rel="stylesheet" type="text/css"/>
+    <script src="assets/panel/assets/js/loader.js"></script>-->
 
     <link href="assets/panel/https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="assets/panel/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -60,26 +60,25 @@ foreach ($redirect as $row){ ?>
     <link rel="stylesheet" href="assets/panel/assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/panel/assets/css/apps/contacts.css">
     <link rel="stylesheet" href="assets/panel/assets/css/apps/todolist.css">
+    <link rel="stylesheet" type="text/css" href="assets/panel/plugins/editors/quill/quill.snow.css">
     <link rel="stylesheet" href="assets/panel/assets/css/structure.css">
 
     <link href="assets/panel/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
     <link href="assets/panel/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="assets/panel/plugins/editors/quill/quill.snow.css">
-    <link href="assets/panel/assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
     <link rel="stylesheet" href="assets/vendor/c3/c3.min.css"/>
     <link rel="stylesheet" href="assets/vendor/parsleyjs/css/parsley.css">
     <link rel="stylesheet" href="assets/vendor/dropify/css/dropify.min.css">
     <link rel="stylesheet" href="assets/vendor/multi-select/css/multi-select.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">-->
 
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/custom_dt_html5.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/dt-global_style.css">
 
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/table/datatable/custom_dt_miscellaneous.css">
-    <link rel="stylesheet" type="text/css" href="assets/panel/assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/assets/css/components/custom-modal.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/assets/css/scrollspyNav.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/alert/css/sweetalert.css">
@@ -87,8 +86,8 @@ foreach ($redirect as $row){ ?>
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/parsleyjs/css/parsley.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/assets/css/authentication/form-1.css">
     <link rel="stylesheet" type="text/css" href="assets/panel/plugins/date-picker/kamadatepicker.min.css">
-    <link href="assets/panel/assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
-    <link href="assets/panel/assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
+
+    <!--<link href="assets/panel/assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />-->
     <link href="assets/panel/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
     <link href="assets/panel/plugins/fullcalendar/custom-fullcalendar.advance.css" rel="stylesheet" type="text/css" />
     <link href="assets/panel/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
@@ -387,36 +386,6 @@ foreach ($redirect as $row){ ?>
                 </li>
 
                 <?php
-                if ($level==1 || $level==6 || $level==5){ ?>
-                    <li class="menu">
-                        <a href="#financial" <?php if ($active=='financial' || $active=='addfinancial' || $active=='archive'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
-                            <div class="">
-                                <i class="fa fa-dollar"></i>
-                                <span>مدیریت مالی</span>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </a>
-                        <ul class="collapse submenu list-unstyled <?php if ($active=='financial' || $active=='addfinancial' || $active=='archive'){echo 'show';} ?>" id="financial" data-parent="#accordionExample">
-                            <li class="<?php if ($active=='financial'){echo 'active';} ?>">
-                                <a href="adminfinancial"> مالی </a>
-                            </li>
-                            <li class="<?php if ($active=='addfinancial'){echo 'active';} ?>">
-                                <a href="adminfinancial/addfinancial"> افزودن </a>
-                            </li>
-                            <li class="<?php if ($active=='archive'){echo 'active';} ?>">
-                                <a href="adminfinancial/archive"> بایگانی ها </a>
-                            </li>
-                        </ul>
-                    </li>
-                <?php } ?>
-
-                <?php
                 if ($level==1 || $level==5){ ?>
                     <li class="menu">
                         <a href="#stat"  <?php if ($active=='stat'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
@@ -463,54 +432,6 @@ foreach ($redirect as $row){ ?>
                         </li>
                         <li class="<?php if ($active=='archiveFactor'){echo 'active';} ?>">
                             <a href="adminpayfactor/getarchive"> بایگانی </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu">
-                    <a href="#support-team"  <?php if ($active=='support-team'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
-                        <div class="">
-                            <i class="fa fa-user-circle"></i>
-                            <span>مدیریت اعضای تیم فنی</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="collapse submenu list-unstyled <?php if ($active=='support-team'){echo 'show';} ?>" id="support-team" data-parent="#accordionExample">
-                        <li class="<?php if ($active=='support-team'){echo 'active';} ?>">
-                            <a href="adminsupportteam"> اعضای فنی </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu">
-                    <a href="#board"  <?php if ($active=='board' || $active=='board-type' || $active=='board-archive'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
-                        <div class="">
-                            <i class="fa fa-tasks"></i>
-                            <span>مدیریت برد پروژه ها</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="collapse submenu list-unstyled <?php if ($active=='board' || $active=='board-type' || $active=='board-archive'){echo 'show';} ?>" id="board" data-parent="#accordionExample">
-                        <li class="<?php if ($active=='board'){echo 'active';} ?>">
-                            <a href="adminboard"> برد پروژه ها </a>
-                        </li>
-                        <li class="<?php if ($active=='board-archive'){echo 'active';} ?>">
-                            <a href="adminboard/getarchive"> برد های بایگانی شده </a>
-                        </li>
-                        <li class="<?php if ($active=='board-type'){echo 'active';} ?>">
-                            <a href="adminboardtype"> نوع برد ها </a>
                         </li>
                     </ul>
                 </li>
@@ -747,27 +668,6 @@ foreach ($redirect as $row){ ?>
                 </li>
 
                 <li class="menu">
-                    <a href="#insta" <?php if ($active=='insta'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
-                        <div class="">
-                            <i class="fa fa-filter"></i>
-                            <span>مدیریت کاربران اینستاگرام</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="collapse submenu list-unstyled <?php if ($active=='insta'){echo 'show';} ?>" id="insta" data-parent="#accordionExample">
-                        <li class="<?php if ($active=='insta'){echo 'active';} ?>">
-                            <a href="admininsta"> کاربران اینستاگرام </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu">
                     <a href="#link" <?php if ($active=='link'){echo 'data-active="true"'.'aria-expanded="true"';} ?> data-toggle="collapse" class="dropdown-toggle">
                         <div class="">
                             <i class="fa fa-link"></i>
@@ -867,7 +767,6 @@ foreach ($redirect as $row){ ?>
 
     <script src="assets/panel/plugins/apex/apexcharts.min.js"></script>
     <script src="assets/panel/assets/js/dashboard/dash_1.js"></script>
-    <script src="assets/panel/assets/js/ie11fix/fn.fix-padStart.js"></script>
     <script src="assets/panel/assets/js/apps/scrumboard.js"></script>
     <script src="assets/panel/assets/js/scrollspyNav.js"></script>
     <script src="assets/panel/plugins/editors/quill/quill.js"></script>
@@ -875,7 +774,7 @@ foreach ($redirect as $row){ ?>
     <script src="assets/panel/assets/js/forms/bootstrap_validation/bs_validation_script.js"></script>
 
     <script src="assets/panel/plugins/table/datatable/datatables.js"></script>
-    <!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
+
     <script src="assets/panel/plugins/table/datatable/button-ext/dataTables.buttons.min.js"></script>
     <script src="assets/panel/plugins/table/datatable/button-ext/jszip.min.js"></script>
     <script src="assets/panel/plugins/table/datatable/button-ext/buttons.html5.min.js"></script>
@@ -890,7 +789,7 @@ foreach ($redirect as $row){ ?>
     <script src="assets/vendor/dropify/js/dropify.js"></script>
     <script src="assets/assets/js/pages/forms/dropify.js"></script>
     <script src="assets/panel/assets/js/ie11fix/fn.fix-padStart.js"></script>
-    <script src="assets/panel/assets/js/apps/notes.js"></script>
+
     <script src="assets/panel/assets/js/apps/invoice.js"></script>
     <script>
         $('#html5-extension').DataTable( {

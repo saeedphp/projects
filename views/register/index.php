@@ -69,7 +69,7 @@
                                     رمز عبور
                                 </label>
                                 <span class="wpcf7-form-control-wrap your-name">
-                                    <i onclick="showpass2(this)" class="fa fa-eye"></i>
+                                    <i onclick="showpass2(this)" class="mdi mdi-eye"></i>
                                     <input type="password" name="password" id="password2" class="wpcf7-form-control wpcf7-text" required>
                                 </span>
                             </p>
@@ -115,10 +115,10 @@
 
         var imgTag = $(tag);
         var eye = imgTag.attr('class');
-        if (eye == 'fa fa-eye') {
-            imgTag.attr('class', 'fa fa-eye-slash');
+        if (eye == 'mdi mdi-eye') {
+            imgTag.attr('class', 'mdi mdi-eye-off');
         } else {
-            imgTag.attr('class', 'fa fa-eye');
+            imgTag.attr('class', 'mdi mdi-eye');
         }
 
         var x =

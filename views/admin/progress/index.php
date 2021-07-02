@@ -15,12 +15,6 @@ $time = date('H:i:s');
 
 <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
-<link id="styleSheet0" rel="stylesheet" href="assets/stop-watch/stylesheets/common.css">
-<link id="styleSheet1" rel="stylesheet" href="assets/stop-watch/stylesheets/light.css">
-<link id="styleSheet1" rel="stylesheet" href="assets/stop-watch/stylesheets/dark.css">
-
-<script src="<?= URL ?>assets/stop-watch/js/index.js"></script>
-<script src="<?= URL ?>assets/stop-watch/js/jsCookie.js"></script>
 
 <style>
     div.chosen-container.chosen-container-multi{width:auto !important;}
@@ -47,11 +41,6 @@ $time = date('H:i:s');
                                     <i class="fa fa-clock-o"></i>
                                     <?= $time; ?>
                                 </span>
-                                <div id="timer"></div>
-                                <button id="startButton">Start</button>
-                                <button id="pauseButton">Pause</button>
-                                <button id="clearButton">Clear</button>
-                                <div id="additionalTime" style="display:none">0</div>
 
                             </div>
 
@@ -70,22 +59,7 @@ $time = date('H:i:s');
                                 </button>
                             </div>
                         </div>
-                    </div>
-
-                    <script type="text/javascript">
-
-                        var _gaq = _gaq || [];
-                        _gaq.push(['_setAccount', 'UA-36251023-1']);
-                        _gaq.push(['_setDomainName', 'jqueryscript.net']);
-                        _gaq.push(['_trackPageview']);
-
-                        (function() {
-                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                        })();
-
-                    </script>
+                </div>
 
                     <!--modal-->
 
@@ -322,6 +296,7 @@ $time = date('H:i:s');
                                         <th>تاریخ تحویل</th>
                                         <th>روزهای باقیمانده</th>
                                         <th>اسکچ ها</th>
+                                        <th>ویدیو</th>
                                         <th> ویرایش</th>
                                         <th>انتخاب
                                             <input id="select" onclick="selectAll();" type="checkbox">
@@ -341,7 +316,13 @@ $time = date('H:i:s');
                                                 <?= $row['title']; ?>
                                             </td>
                                             <td>
-                                                <?= $row['projectType']; ?>
+                                                <?php
+                                                if ($row['projectType']!=''){
+                                                    echo $row['projectType'];
+                                                }else{
+                                                    echo 'مشخص نشده';
+                                                }
+                                                ?>
                                             </td>
                                             <td>
                                                 <span class="shadow-none needs <?php if ($row['status'] == 1) {
@@ -408,7 +389,6 @@ $time = date('H:i:s');
                                                     </p>
                                                 <?php } ?>
                                             </td>
-
                                             <td>
                                                 <a href="adminprogress/sketch/<?= $row['id']; ?>"
                                                    style="cursor: pointer;"
@@ -416,7 +396,11 @@ $time = date('H:i:s');
                                                     <i class="fa fa-photo"></i>
                                                 </a>
                                             </td>
-
+                                            <td>
+                                                <a style="cursor: pointer;" href="adminprogress/video/<?= $row['id']; ?>">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </td>
                                             <td>
                                                 <a style="cursor: pointer;" data-toggle="modal"
                                                    data-target="#editModal">
@@ -437,6 +421,7 @@ $time = date('H:i:s');
 
                     </div>
                 </div>
+
             </div>
         </div>
 

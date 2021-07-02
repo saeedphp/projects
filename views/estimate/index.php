@@ -75,8 +75,20 @@
 
                         <!-- One "tab" for each step in the form: -->
                         <div class="tab">Name:
-                            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
-                            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+                            <p>
+                                <label>سایت</label>
+                                <input type="radio" name="target"
+                                       class="wpcf7-form-control-wrap your-message"
+                                       oninput="this.className = ''">
+                                <label>سئو</label>
+                                <input type="radio" name="target"
+                                       class="wpcf7-form-control-wrap your-message"
+                                       oninput="this.className = ''">
+                                <label>محتوا</label>
+                                <input type="radio" name="target"
+                                       class="wpcf7-form-control-wrap your-message"
+                                       oninput="this.className = ''">
+                            </p>
                         </div>
 
                         <div class="tab">Contact Info:

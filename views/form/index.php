@@ -74,7 +74,7 @@ $userId = Model::sessionGet('userId');
                                 <?php } } ?>
 
                             <form style="margin-bottom: 50px;" action="form/index" enctype="multipart/form-data"
-                                  class="wpcf7-form" id="myform" method="POST">
+                                  class="wpcf7-form needs-form" id="myform" method="POST">
                                 <p>
                                     <label>
                                         نام شرکت/مجموعه شما چیست؟
